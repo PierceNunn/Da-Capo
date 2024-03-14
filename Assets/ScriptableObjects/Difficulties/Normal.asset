@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91afa085029231b4e88bd9dd53f5549c, type: 3}
   m_Name: Normal
   m_EditorClassIdentifier: 
-  timingWindow: 0.35
+  timingWindow: 0.25
   perfectTimingWindow: 0.1

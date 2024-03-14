@@ -2,17 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MusicChartTemplate : MonoBehaviour
+[CreateAssetMenu]
+public class MusicChartTemplate : ScriptableObject
 {
-    
-    void Start()
-    {
-        
-    }
-
-    
-    void Update()
-    {
-        
-    }
+    [SerializeField] private AudioClip _song;
+    [SerializeField] private int _BPM;
+    [SerializeField] private NoteChart _songChart;
 }
