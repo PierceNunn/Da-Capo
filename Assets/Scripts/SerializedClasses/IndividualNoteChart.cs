@@ -18,4 +18,7 @@ public class IndividualNoteChart
     }
     [SerializeField] private NoteTemplate _note;
     [SerializeField] private possiblePitches _pitch;
+
+    public NoteTemplate Note { get => _note; set => _note = value; }
+    public possiblePitches Pitch { get => _pitch; set => _pitch = value; }
 }

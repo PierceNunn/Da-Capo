@@ -6,4 +6,6 @@ using UnityEngine;
 public class NoteChart
 {
     [SerializeField] private MeasureChart[] _measures;
+
+    public MeasureChart[] Measures { get => _measures; set => _measures = value; }
 }
