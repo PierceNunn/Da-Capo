@@ -6,14 +6,15 @@ public class RhythmController : MonoBehaviour
 {
     
     [SerializeField] private float songBPM;
+    [SerializeField] private float beatsPerLoop;
+    [SerializeField] private int completedLoops = 0;
+    [SerializeField] private float loopPositionInBeats;
+    [SerializeField] private DifficultyTemplate _currentDifficulty;
     private float secsPerBeat;
     private float songPos;
     private float songPosInBeats;
     private float dspSongTime;
-
-    public float beatsPerLoop;
-    public int completedLoops = 0;
-    public float loopPositionInBeats;
+    private int wholeBeats = 0;
 
     //The current relative position of the song within the loop measured between 0 and 1.
     public float loopPositionInAnalog;
@@ -28,6 +29,8 @@ public class RhythmController : MonoBehaviour
     public float SongPos { get => songPos; set => songPos = value; }
     public float SongPosInBeats { get => songPosInBeats; set => songPosInBeats = value; }
     public float DspSongTime { get => dspSongTime; set => dspSongTime = value; }
+    public DifficultyTemplate CurrentDifficulty { get => _currentDifficulty; set => _currentDifficulty = value; }
+    public float LoopPositionInBeats { get => loopPositionInBeats; set => loopPositionInBeats = value; }
 
     void Awake()
     {
@@ -45,13 +48,22 @@ public class RhythmController : MonoBehaviour
     void Update()
     {
         if (songPosInBeats >= (completedLoops + 1) * beatsPerLoop)
+        {
             completedLoops++;
-        loopPositionInBeats = songPosInBeats - completedLoops * beatsPerLoop;
+            wholeBeats = 0;
+        }
+        if(Mathf.Floor(songPosInBeats) > wholeBeats)
+        {
+            wholeBeats++;
+            FindObjectOfType<Metronome>().MetronomeTick();
+        }
+            
+        LoopPositionInBeats = songPosInBeats - completedLoops * beatsPerLoop;
 
         songPos = (float)(AudioSettings.dspTime - dspSongTime);
 
         songPosInBeats = songPos / secsPerBeat;
 
-        loopPositionInAnalog = loopPositionInBeats / beatsPerLoop;
+        loopPositionInAnalog = LoopPositionInBeats / beatsPerLoop;
     }
 }
