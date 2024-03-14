@@ -14,7 +14,7 @@ public class RhythmController : MonoBehaviour
     private float songPos;
     private float songPosInBeats;
     private float dspSongTime;
-    private int wholeBeats = 0;
+    private int wholeBeats = 1;
 
     //The current relative position of the song within the loop measured between 0 and 1.
     public float loopPositionInAnalog;
@@ -50,9 +50,10 @@ public class RhythmController : MonoBehaviour
         if (songPosInBeats >= (completedLoops + 1) * beatsPerLoop)
         {
             completedLoops++;
-            wholeBeats = 0;
+            wholeBeats = -1;
+            FindObjectOfType<Metronome>().MetronomeTick();
         }
-        if(Mathf.Floor(songPosInBeats) > wholeBeats)
+        if(Mathf.Floor(LoopPositionInBeats) > wholeBeats)
         {
             wholeBeats++;
             FindObjectOfType<Metronome>().MetronomeTick();
