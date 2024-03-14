@@ -15,8 +15,8 @@ public class PlayerController : MonoBehaviour
     {
         float targetTime = Mathf.Round(RhythmController.instance.LoopPositionInBeats);
         float actualTime = RhythmController.instance.LoopPositionInBeats;
-        if (actualTime <= RhythmController.instance.CurrentDifficulty.TimingWindow + targetTime &&
-            actualTime >= RhythmController.instance.CurrentDifficulty.TimingWindow - targetTime)
+        if (actualTime < targetTime + RhythmController.instance.CurrentDifficulty.TimingWindow &&
+            actualTime > targetTime - RhythmController.instance.CurrentDifficulty.TimingWindow)
         {
             _hitSound.Play();
             return true;
