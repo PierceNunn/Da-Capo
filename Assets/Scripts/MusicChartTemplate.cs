@@ -41,6 +41,20 @@ public class MusicChartTemplate : ScriptableObject
         return measureTimeInBeats;
     }
 
+    public NoteTemplate GetNoteAtTime(float noteTime, int targetMeasure)
+    {
+        MeasureChart currentMeasure = _songChart.Measures[targetMeasure];
+        float elapsedTestTime = 0;
+        for (int i = 0; i < currentMeasure.MeasureNotes.Length - 1; i++)
+        {
+            if((elapsedTestTime + currentMeasure.MeasureNotes[i].Note.NoteLength) >= noteTime)
+            {
+                return currentMeasure.MeasureNotes[i].Note;
+            }
+            elapsedTestTime += currentMeasure.MeasureNotes[i].Note.NoteLength;
+        }
+        return null;
+    }
 
     public NoteTemplate GetNextNote(float loopPositionInBeats, int completedLoops)
     {
