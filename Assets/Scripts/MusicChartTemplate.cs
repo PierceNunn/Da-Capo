@@ -72,5 +72,9 @@ public class MusicChartTemplate : ScriptableObject
     {
         return GetNoteAtTime(GetNextNoteTime(loopPositionInBeats, completedLoops), completedLoops);
     }
+    public NoteTemplate GetLastNote(float loopPositionInBeats, int completedLoops, float measureTimeInBeats)
+    {
+        return GetNoteAtTime(GetLastNoteTime(loopPositionInBeats, completedLoops, measureTimeInBeats), completedLoops);
+    }
 
 }
