@@ -9,13 +9,19 @@ public class MusicChartTemplate : ScriptableObject
     [SerializeField] private int _BPM;
     [SerializeField] private NoteChart _songChart;
 
+    /// <summary>
+    /// Finds the time that the next note is played.
+    /// </summary>
+    /// <param name="loopPositionInBeats">The progress through the current measure.</param>
+    /// <param name="completedLoops">the current measure in _songChart.</param>
+    /// <returns></returns>
     public float GetNextNoteTime(float loopPositionInBeats, int completedLoops)
     {
         MeasureChart currentMeasure = _songChart.Measures[completedLoops]; //get current measure
         float result = 0f; //value to return as next note's hit time
         for(int i = 0; i < currentMeasure.MeasureNotes.Length; i++)
         {
-            if (!currentMeasure.MeasureNotes[i].Note.IsRest && result >= loopPositionInBeats)
+            if (result >= loopPositionInBeats)
             {
                 return result;
 
@@ -25,13 +31,19 @@ public class MusicChartTemplate : ScriptableObject
         return 0f;
     }
 
+    /// <summary>
+    /// Finds the time that the previous note was played.
+    /// </summary>
+    /// <param name="loopPositionInBeats">The progress through the current measure.</param>
+    /// <param name="completedLoops">the current measure in _songChart.</param>
+    /// <returns></returns>
     public float GetLastNoteTime(float loopPositionInBeats, int completedLoops, float measureTimeInBeats)
     {
         MeasureChart currentMeasure = _songChart.Measures[completedLoops]; //get current measure
         float result = measureTimeInBeats; //value to return as next note's hit time
         for (int i = currentMeasure.MeasureNotes.Length; i >= 0 ; i++)
         {
-            if (!currentMeasure.MeasureNotes[i].Note.IsRest && result < loopPositionInBeats)
+            if (result < loopPositionInBeats)
             {
                 return result;
 
@@ -53,23 +65,12 @@ public class MusicChartTemplate : ScriptableObject
             }
             elapsedTestTime += currentMeasure.MeasureNotes[i].Note.NoteLength;
         }
-        return null;
+        return currentMeasure.MeasureNotes[0].Note;
     }
 
     public NoteTemplate GetNextNote(float loopPositionInBeats, int completedLoops)
     {
-        MeasureChart currentMeasure = _songChart.Measures[completedLoops]; //get current measure
-        float result = 0f; //value to return as next note's hit time
-        for (int i = 0; i < currentMeasure.MeasureNotes.Length; i++)
-        {
-            if (result >= loopPositionInBeats)
-            {
-                return currentMeasure.MeasureNotes[i].Note;
-
-            }
-            result += currentMeasure.MeasureNotes[i].Note.NoteLength;
-        }
-        return currentMeasure.MeasureNotes[0].Note;
+        return GetNoteAtTime(GetNextNoteTime(loopPositionInBeats, completedLoops), completedLoops);
     }
 
 }
