@@ -15,6 +15,7 @@ public class RhythmController : MonoBehaviour
     private float secsPerBeat;
     private float songPos;
     private float songPosInBeats;
+    private float measureTimeInBeats;
     private float dspSongTime;
     private int wholeBeats = 1;
 
@@ -34,6 +35,7 @@ public class RhythmController : MonoBehaviour
     public DifficultyTemplate CurrentDifficulty { get => _currentDifficulty; set => _currentDifficulty = value; }
     public float LoopPositionInBeats { get => loopPositionInBeats; set => loopPositionInBeats = value; }
     public MusicChartTemplate CurrentSong { get => _currentSong; set => _currentSong = value; }
+    public float MeasureTimeInBeats { get => measureTimeInBeats; set => measureTimeInBeats = value; }
 
     void Awake()
     {
@@ -44,6 +46,7 @@ public class RhythmController : MonoBehaviour
     {
         musicSource = GetComponent<AudioSource>();
         secsPerBeat = 60f / songBPM;
+        measureTimeInBeats = beatsPerLoop * secsPerBeat;
         dspSongTime = (float)AudioSettings.dspTime;
         musicSource.Play();
     }
@@ -70,6 +73,7 @@ public class RhythmController : MonoBehaviour
 
         loopPositionInAnalog = LoopPositionInBeats / beatsPerLoop;
     }
+
 
     public NoteTemplate GetNextNote()
     {

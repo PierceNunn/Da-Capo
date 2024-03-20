@@ -31,7 +31,7 @@ public class MusicChartTemplate : ScriptableObject
         float result = 0f; //value to return as next note's hit time
         for (int i = 0; i < currentMeasure.MeasureNotes.Length; i++)
         {
-            if (!currentMeasure.MeasureNotes[i].Note.IsRest && result >= loopPositionInBeats)
+            if (result >= loopPositionInBeats)
             {
                 return currentMeasure.MeasureNotes[i].Note;
 
