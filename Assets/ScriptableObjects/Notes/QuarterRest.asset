@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5042b12d012b53a4a992df09e46375c4, type: 3}
   m_Name: QuarterRest
   m_EditorClassIdentifier: 
-  _noteLength: 0
-  _isRest: 0
-  _noteSprite: {fileID: 0}
+  _noteLength: 1
+  _isRest: 1
+  _noteSprite: {fileID: -119631974, guid: bf289ffb59ff72d4a9917b2f24922195, type: 3}
