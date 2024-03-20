@@ -75,11 +75,11 @@ public class RhythmController : MonoBehaviour
     }
 
 
-    public NoteTemplate[] GetSurroundingNotes()
+    public IndividualNoteChart[] GetSurroundingNotes()
     {
-        NoteTemplate next = _currentSong.GetNextNote(loopPositionInBeats, completedLoops);
-        NoteTemplate last = _currentSong.GetLastNote(loopPositionInBeats, completedLoops, measureTimeInBeats);
-        NoteTemplate[] output = { last, next };
+        IndividualNoteChart next = _currentSong.GetNextNote(loopPositionInBeats, completedLoops);
+        IndividualNoteChart last = _currentSong.GetLastNote(loopPositionInBeats, completedLoops, measureTimeInBeats);
+        IndividualNoteChart[] output = { last, next };
         return output;
     }
 }

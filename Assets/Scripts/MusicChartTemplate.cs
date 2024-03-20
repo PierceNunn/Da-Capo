@@ -53,7 +53,7 @@ public class MusicChartTemplate : ScriptableObject
         return measureTimeInBeats;
     }
 
-    public NoteTemplate GetNoteAtTime(float noteTime, int targetMeasure)
+    public IndividualNoteChart GetNoteAtTime(float noteTime, int targetMeasure)
     {
         MeasureChart currentMeasure = _songChart.Measures[targetMeasure];
         float elapsedTestTime = 0;
@@ -63,19 +63,19 @@ public class MusicChartTemplate : ScriptableObject
             if ((elapsedTestTime + currentMeasure.MeasureNotes[i].Note.NoteLength) > noteTime)
             {
                 
-                return currentMeasure.MeasureNotes[i].Note;
+                return currentMeasure.MeasureNotes[i];
             }
             elapsedTestTime += currentMeasure.MeasureNotes[i].Note.NoteLength;
         }
         Debug.Log("GetNoteAtTime default case");
-        return currentMeasure.MeasureNotes[currentMeasure.MeasureNotes.Length].Note;
+        return currentMeasure.MeasureNotes[currentMeasure.MeasureNotes.Length];
     }
 
-    public NoteTemplate GetNextNote(float loopPositionInBeats, int completedLoops)
+    public IndividualNoteChart GetNextNote(float loopPositionInBeats, int completedLoops)
     {
         return GetNoteAtTime(GetNextNoteTime(loopPositionInBeats, completedLoops), completedLoops);
     }
-    public NoteTemplate GetLastNote(float loopPositionInBeats, int completedLoops, float measureTimeInBeats)
+    public IndividualNoteChart GetLastNote(float loopPositionInBeats, int completedLoops, float measureTimeInBeats)
     {
         return GetNoteAtTime(GetLastNoteTime(loopPositionInBeats, completedLoops, measureTimeInBeats), completedLoops);
     }
