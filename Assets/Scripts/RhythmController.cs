@@ -10,6 +10,8 @@ public class RhythmController : MonoBehaviour
     [SerializeField] private int completedLoops = 0;
     [SerializeField] private float loopPositionInBeats;
     [SerializeField] private DifficultyTemplate _currentDifficulty;
+    [SerializeField] private MusicChartTemplate _currentSong;
+
     private float secsPerBeat;
     private float songPos;
     private float songPosInBeats;
@@ -31,6 +33,7 @@ public class RhythmController : MonoBehaviour
     public float DspSongTime { get => dspSongTime; set => dspSongTime = value; }
     public DifficultyTemplate CurrentDifficulty { get => _currentDifficulty; set => _currentDifficulty = value; }
     public float LoopPositionInBeats { get => loopPositionInBeats; set => loopPositionInBeats = value; }
+    public MusicChartTemplate CurrentSong { get => _currentSong; set => _currentSong = value; }
 
     void Awake()
     {
@@ -66,5 +69,10 @@ public class RhythmController : MonoBehaviour
         songPosInBeats = songPos / secsPerBeat;
 
         loopPositionInAnalog = LoopPositionInBeats / beatsPerLoop;
+    }
+
+    public NoteTemplate GetNextNote()
+    {
+        return _currentSong.GetNextNote(loopPositionInBeats, completedLoops);
     }
 }

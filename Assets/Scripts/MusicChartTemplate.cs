@@ -24,4 +24,21 @@ public class MusicChartTemplate : ScriptableObject
         }
         return 0f;
     }
+
+    public NoteTemplate GetNextNote(float loopPositionInBeats, int completedLoops)
+    {
+        MeasureChart currentMeasure = _songChart.Measures[completedLoops]; //get current measure
+        float result = 0f; //value to return as next note's hit time
+        for (int i = 0; i < currentMeasure.MeasureNotes.Length; i++)
+        {
+            if (!currentMeasure.MeasureNotes[i].Note.IsRest && result >= loopPositionInBeats)
+            {
+                return currentMeasure.MeasureNotes[i].Note;
+
+            }
+            result += currentMeasure.MeasureNotes[i].Note.NoteLength;
+        }
+        return currentMeasure.MeasureNotes[0].Note;
+    }
+
 }
