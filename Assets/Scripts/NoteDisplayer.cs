@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class NoteDisplayer : MonoBehaviour
 {
+    [SerializeField] private GameObject _lastNoteDisplay;
     void Update()
     {
-        gameObject.GetComponent<SpriteRenderer>().sprite = RhythmController.instance.GetNextNote().NoteSprite;
+        NoteTemplate[] surroundingNotes = RhythmController.instance.GetSurroundingNotes();
+        gameObject.GetComponent<SpriteRenderer>().sprite = surroundingNotes[1].NoteSprite;
+        _lastNoteDisplay.GetComponent<SpriteRenderer>().sprite = surroundingNotes[0].NoteSprite;
     }
 }
