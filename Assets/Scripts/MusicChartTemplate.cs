@@ -43,7 +43,7 @@ public class MusicChartTemplate : ScriptableObject
         float result = measureTimeInBeats; //value to return as next note's hit time
         for (int i = currentMeasure.MeasureNotes.Length - 1; i >= 0 ; i--)
         {
-            if (result < loopPositionInBeats)
+            if (result <= loopPositionInBeats)
             {
                 return result;
 
@@ -55,11 +55,14 @@ public class MusicChartTemplate : ScriptableObject
 
     public IndividualNoteChart GetNoteAtTime(float noteTime, int targetMeasure)
     {
+        if(noteTime < 0f)
+        {
+            return GetNoteAtTime(noteTime + RhythmController.instance.BeatsPerLoop, targetMeasure - 1);
+        }
         MeasureChart currentMeasure = _songChart.Measures[targetMeasure];
         float elapsedTestTime = 0;
         for (int i = 0; i <= currentMeasure.MeasureNotes.Length; i++)
         {
-            Debug.Log(i);
             if ((elapsedTestTime + currentMeasure.MeasureNotes[i].Note.NoteLength) > noteTime)
             {
                 
@@ -68,7 +71,7 @@ public class MusicChartTemplate : ScriptableObject
             elapsedTestTime += currentMeasure.MeasureNotes[i].Note.NoteLength;
         }
         Debug.Log("GetNoteAtTime default case");
-        return currentMeasure.MeasureNotes[currentMeasure.MeasureNotes.Length];
+        return _songChart.Measures[targetMeasure + 1].MeasureNotes[0];
     }
 
     public IndividualNoteChart GetNextNote(float loopPositionInBeats, int completedLoops)

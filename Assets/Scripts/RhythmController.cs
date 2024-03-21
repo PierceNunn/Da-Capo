@@ -36,6 +36,8 @@ public class RhythmController : MonoBehaviour
     public float LoopPositionInBeats { get => loopPositionInBeats; set => loopPositionInBeats = value; }
     public MusicChartTemplate CurrentSong { get => _currentSong; set => _currentSong = value; }
     public float MeasureTimeInBeats { get => measureTimeInBeats; set => measureTimeInBeats = value; }
+    public float BeatsPerLoop { get => beatsPerLoop; set => beatsPerLoop = value; }
+    public int CompletedLoops { get => completedLoops; set => completedLoops = value; }
 
     void Awake()
     {
@@ -46,16 +48,16 @@ public class RhythmController : MonoBehaviour
     {
         musicSource = GetComponent<AudioSource>();
         secsPerBeat = 60f / songBPM;
-        measureTimeInBeats = beatsPerLoop * secsPerBeat;
+        measureTimeInBeats = BeatsPerLoop * secsPerBeat;
         dspSongTime = (float)AudioSettings.dspTime;
         musicSource.Play();
     }
 
     void Update()
     {
-        if (songPosInBeats >= (completedLoops + 1) * beatsPerLoop)
+        if (songPosInBeats >= (CompletedLoops + 1) * BeatsPerLoop)
         {
-            completedLoops++;
+            CompletedLoops++;
             wholeBeats = -1;
             FindObjectOfType<Metronome>().MetronomeTick();
         }
@@ -65,21 +67,29 @@ public class RhythmController : MonoBehaviour
             FindObjectOfType<Metronome>().MetronomeTick();
         }
             
-        LoopPositionInBeats = songPosInBeats - completedLoops * beatsPerLoop;
+        LoopPositionInBeats = songPosInBeats - CompletedLoops * BeatsPerLoop;
 
         songPos = (float)(AudioSettings.dspTime - dspSongTime);
 
         songPosInBeats = songPos / secsPerBeat;
 
-        loopPositionInAnalog = LoopPositionInBeats / beatsPerLoop;
+        loopPositionInAnalog = LoopPositionInBeats / BeatsPerLoop;
     }
 
 
     public IndividualNoteChart[] GetSurroundingNotes()
     {
-        IndividualNoteChart next = _currentSong.GetNextNote(loopPositionInBeats, completedLoops);
-        IndividualNoteChart last = _currentSong.GetLastNote(loopPositionInBeats, completedLoops, measureTimeInBeats);
+        IndividualNoteChart next = _currentSong.GetNextNote(loopPositionInBeats, CompletedLoops);
+        IndividualNoteChart last = _currentSong.GetLastNote(loopPositionInBeats, CompletedLoops, measureTimeInBeats);
         IndividualNoteChart[] output = { last, next };
+        return output;
+    }
+
+    public float[] GetSurroundingNotesTime()
+    {
+        float next = _currentSong.GetNextNoteTime(loopPositionInBeats, CompletedLoops);
+        float last = _currentSong.GetLastNoteTime(loopPositionInBeats, CompletedLoops, measureTimeInBeats);
+        float[] output = { last, next };
         return output;
     }
 }
