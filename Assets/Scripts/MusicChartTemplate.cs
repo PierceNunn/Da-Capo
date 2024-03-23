@@ -74,6 +74,18 @@ public class MusicChartTemplate : ScriptableObject
         return _songChart.Measures[targetMeasure + 1].MeasureNotes[0];
     }
 
+    public float GetGivenNoteTime(int measure, int noteToGetTime)
+    {
+        MeasureChart currentMeasure = _songChart.Measures[measure];
+        //start with elapsed beats prior to note's measure
+        float returnValue = RhythmController.instance.MeasureTimeInBeats * measure;
+        for(int i = 0; i < noteToGetTime; i++)
+        {
+            returnValue += currentMeasure.MeasureNotes[i].Note.NoteLength;
+        }
+        return returnValue;
+    }
+
     public IndividualNoteChart GetNextNote(float loopPositionInBeats, int completedLoops)
     {
         return GetNoteAtTime(GetNextNoteTime(loopPositionInBeats, completedLoops), completedLoops);
