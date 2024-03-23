@@ -27,19 +27,19 @@ public class IndividualNoteChart
         switch (_pitch)
         {
             case (possiblePitches.A):
-                return 0;
-            case (possiblePitches.B):
-                return 1;
-            case (possiblePitches.C):
-                return 2;
-            case (possiblePitches.D):
                 return 3;
-            case (possiblePitches.E):
+            case (possiblePitches.B):
                 return 4;
-            case (possiblePitches.F):
+            case (possiblePitches.C):
                 return 5;
-            case (possiblePitches.G):
+            case (possiblePitches.D):
                 return 6;
+            case (possiblePitches.E):
+                return 7;
+            case (possiblePitches.F):
+                return 8;
+            case (possiblePitches.G):
+                return 9;
             default:
                 return 0;
         }
