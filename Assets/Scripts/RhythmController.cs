@@ -85,9 +85,20 @@ public class RhythmController : MonoBehaviour
         return output;
     }
 
+    public float GetLastMeasureNoteTime()
+    {
+        return _currentSong.GetGivenNoteTime(CompletedLoops - 1,
+            _currentSong.SongChart.Measures[CompletedLoops].MeasureNotes.Length);
+    }
+
+    public float GetNextMeasureNoteTime()
+    {
+        return _currentSong.GetGivenNoteTime(CompletedLoops + 1, 0);
+    }
+
     public float[] GetSurroundingNotesTime()
     {
-        float next = _currentSong.GetNextNoteTime(loopPositionInBeats, CompletedLoops);
+        float next = _currentSong.GetNextNoteTime(CompletedLoops);
         float last = _currentSong.GetLastNoteTime(loopPositionInBeats, CompletedLoops, measureTimeInBeats);
         float[] output = { last, next };
         return output;

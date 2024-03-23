@@ -64,3 +64,12 @@ MonoBehaviour:
         _pitch: 4
       - _note: {fileID: 11400000, guid: 92d7c6fda5e471045b216df077a9fa79, type: 2}
         _pitch: 3
+    - _measureNotes:
+      - _note: {fileID: 11400000, guid: 92d7c6fda5e471045b216df077a9fa79, type: 2}
+        _pitch: 2
+      - _note: {fileID: 11400000, guid: 0532f2a2a0e3d66499f2fed51a23bec7, type: 2}
+        _pitch: 2
+      - _note: {fileID: 11400000, guid: 92d7c6fda5e471045b216df077a9fa79, type: 2}
+        _pitch: 2
+      - _note: {fileID: 11400000, guid: 0532f2a2a0e3d66499f2fed51a23bec7, type: 2}
+        _pitch: 2

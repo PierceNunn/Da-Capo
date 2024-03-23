@@ -17,18 +17,21 @@ public class MusicChartTemplate : ScriptableObject
     /// <param name="loopPositionInBeats">The progress through the current measure.</param>
     /// <param name="completedLoops">the current measure in _songChart.</param>
     /// <returns></returns>
-    public float GetNextNoteTime(float loopPositionInBeats, int completedLoops)
+    public float GetNextNoteTime(int completedLoops)
     {
         MeasureChart currentMeasure = SongChart.Measures[completedLoops]; //get current measure
-        float result = 0f; //value to return as next note's hit time
-        for(int i = 0; i < currentMeasure.MeasureNotes.Length; i++)
+        float result = RhythmController.instance.BeatsPerLoop * completedLoops; //value to return as next note's hit time
+        for (int i = 0; i < currentMeasure.MeasureNotes.Length; i++)
         {
-            if (result >= loopPositionInBeats)
+            if (result >= RhythmController.instance.SongPosInBeats && !currentMeasure.MeasureNotes[i].Note.IsRest)
             {
                 return result;
-
             }
             result += currentMeasure.MeasureNotes[i].Note.NoteLength;
+        }
+        if(SongChart.Measures.Length > completedLoops)
+        {
+            return GetNextNoteTime(completedLoops + 1);
         }
         return 0f;
     }
@@ -45,7 +48,7 @@ public class MusicChartTemplate : ScriptableObject
         float result = measureTimeInBeats; //value to return as next note's hit time
         for (int i = currentMeasure.MeasureNotes.Length - 1; i >= 0 ; i--)
         {
-            if (result <= loopPositionInBeats)
+            if (result <= loopPositionInBeats && !currentMeasure.MeasureNotes[i].Note.IsRest)
             {
                 return result;
 
@@ -90,7 +93,7 @@ public class MusicChartTemplate : ScriptableObject
 
     public IndividualNoteChart GetNextNote(float loopPositionInBeats, int completedLoops)
     {
-        return GetNoteAtTime(GetNextNoteTime(loopPositionInBeats, completedLoops), completedLoops);
+        return GetNoteAtTime(GetNextNoteTime(completedLoops), completedLoops);
     }
     public IndividualNoteChart GetLastNote(float loopPositionInBeats, int completedLoops, float measureTimeInBeats)
     {

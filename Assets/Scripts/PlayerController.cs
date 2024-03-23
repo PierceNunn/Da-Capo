@@ -13,15 +13,26 @@ public class PlayerController : MonoBehaviour
 
     public bool IsButtonTimed()
     {
-        float targetTime = Mathf.Round(RhythmController.instance.LoopPositionInBeats);
-        float actualTime = RhythmController.instance.LoopPositionInBeats;
-        if (actualTime < targetTime + RhythmController.instance.CurrentDifficulty.TimingWindow &&
-            actualTime > targetTime - RhythmController.instance.CurrentDifficulty.TimingWindow)
+        float[] surroundingNoteTimes = RhythmController.instance.GetSurroundingNotesTime();
+
+        if(CheckButtonTiming(surroundingNoteTimes[0]) || CheckButtonTiming(surroundingNoteTimes[1]))
         {
             _hitSound.Play();
             return true;
         }
+
         _missSound.Play();
+        return false;
+    }
+
+    public bool CheckButtonTiming(float timeToCheck)
+    {
+        float actualTime = RhythmController.instance.SongPosInBeats;
+        if (actualTime < timeToCheck + RhythmController.instance.CurrentDifficulty.TimingWindow &&
+            actualTime > timeToCheck - RhythmController.instance.CurrentDifficulty.TimingWindow)
+        {
+            return true;
+        }
         return false;
     }
 }
