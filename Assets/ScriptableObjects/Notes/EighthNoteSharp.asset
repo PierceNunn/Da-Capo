@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5042b12d012b53a4a992df09e46375c4, type: 3}
+  m_Name: EighthNoteSharp
+  m_EditorClassIdentifier: 
+  _noteLength: 0.5
+  _isRest: 0
+  _isSharp: 1
+  _isFlat: 0
+  _noteSprite: {fileID: -1947561957, guid: cadef6a417a041949a1c3dd40fa69635, type: 3}

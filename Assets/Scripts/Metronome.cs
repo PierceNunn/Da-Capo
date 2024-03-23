@@ -5,8 +5,8 @@ using UnityEngine;
 public class Metronome : MonoBehaviour
 {
     [SerializeField] private AudioSource _metronomeSound;
-    public void MetronomeTick()
+    public void MetronomeTick(double delay)
     {
-        _metronomeSound.Play();
+        _metronomeSound.PlayScheduled(delay);
     }
 }

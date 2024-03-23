@@ -5,7 +5,7 @@ using UnityEngine;
 public class RhythmController : MonoBehaviour
 {
     
-    [SerializeField] private float songBPM;
+    private float songBPM;
     [SerializeField] private float beatsPerLoop;
     [SerializeField] private int completedLoops = 0;
     [SerializeField] private float loopPositionInBeats;
@@ -46,7 +46,9 @@ public class RhythmController : MonoBehaviour
 
     void Start()
     {
+        songBPM = _currentSong.BPM;
         musicSource = GetComponent<AudioSource>();
+        musicSource.clip = _currentSong.Song;
         secsPerBeat = 60f / songBPM;
         measureTimeInBeats = BeatsPerLoop * secsPerBeat;
         dspSongTime = (float)AudioSettings.dspTime;
@@ -59,12 +61,12 @@ public class RhythmController : MonoBehaviour
         {
             CompletedLoops++;
             wholeBeats = -1;
-            FindObjectOfType<Metronome>().MetronomeTick();
+            FindObjectOfType<Metronome>().MetronomeTick(0);
         }
         if(Mathf.Floor(LoopPositionInBeats) > wholeBeats)
         {
             wholeBeats++;
-            FindObjectOfType<Metronome>().MetronomeTick();
+            FindObjectOfType<Metronome>().MetronomeTick(0);
         }
             
         LoopPositionInBeats = songPosInBeats - CompletedLoops * BeatsPerLoop;

@@ -15,9 +15,11 @@ using UnityEngine;
 [CreateAssetMenu]
 public class DifficultyTemplate : ScriptableObject
 {
-    [SerializeField] private float timingWindow; //permittable time before or after note where button press counts
-    [SerializeField] private float perfectTimingWindow; //permittable time before or after note for perfect hit
+    [SerializeField] private float _timingWindow; //permittable time before or after note where button press counts
+    [SerializeField] private float _perfectTimingWindow; //permittable time before or after note for perfect hit
+    [SerializeField] private bool _oneButtonMode = false;
 
-    public float PerfectTimingWindow { get => perfectTimingWindow; set => perfectTimingWindow = value; }
-    public float TimingWindow { get => timingWindow; set => timingWindow = value; }
+    public float PerfectTimingWindow { get => _perfectTimingWindow; set => _perfectTimingWindow = value; }
+    public float TimingWindow { get => _timingWindow; set => _timingWindow = value; }
+    public bool OneButtonMode { get => _oneButtonMode; set => _oneButtonMode = value; }
 }

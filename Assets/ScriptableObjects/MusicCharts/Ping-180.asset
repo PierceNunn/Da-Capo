@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c759d7418423dc3448a381d81460ec4f, type: 3}
+  m_Name: Ping-180
+  m_EditorClassIdentifier: 
+  _song: {fileID: 8300000, guid: fbe1877f3e2ce82418e933d93b48acab, type: 3}
+  _BPM: 180
+  _songChart:
+    _measures:
+    - _measureNotes:
+      - _note: {fileID: 11400000, guid: a65ea7fae86fdb042bec2b01a6eb4642, type: 2}
+        _pitch: 6
+      - _note: {fileID: 11400000, guid: 242e097d894fc244bb1c6a8384a2a4ef, type: 2}
+        _pitch: 6
+      - _note: {fileID: 11400000, guid: 0fdfbb5b3f44b1e409cb4c0b7c4dd1ad, type: 2}
+        _pitch: 1
+      - _note: {fileID: 11400000, guid: a65ea7fae86fdb042bec2b01a6eb4642, type: 2}
+        _pitch: 6
+      - _note: {fileID: 11400000, guid: 0fdfbb5b3f44b1e409cb4c0b7c4dd1ad, type: 2}
+        _pitch: 6
+      - _note: {fileID: 11400000, guid: 242e097d894fc244bb1c6a8384a2a4ef, type: 2}
+        _pitch: 6
+      - _note: {fileID: 11400000, guid: a65ea7fae86fdb042bec2b01a6eb4642, type: 2}
+        _pitch: 6
+      - _note: {fileID: 11400000, guid: 242e097d894fc244bb1c6a8384a2a4ef, type: 2}
+        _pitch: 6
+    - _measureNotes:
+      - _note: {fileID: 11400000, guid: a65ea7fae86fdb042bec2b01a6eb4642, type: 2}
+        _pitch: 6
+      - _note: {fileID: 11400000, guid: 242e097d894fc244bb1c6a8384a2a4ef, type: 2}
+        _pitch: 6
+      - _note: {fileID: 11400000, guid: 0fdfbb5b3f44b1e409cb4c0b7c4dd1ad, type: 2}
+        _pitch: 2
+      - _note: {fileID: 11400000, guid: a65ea7fae86fdb042bec2b01a6eb4642, type: 2}
+        _pitch: 6
+      - _note: {fileID: 11400000, guid: 0fdfbb5b3f44b1e409cb4c0b7c4dd1ad, type: 2}
+        _pitch: 6
+      - _note: {fileID: 11400000, guid: 242e097d894fc244bb1c6a8384a2a4ef, type: 2}
+        _pitch: 6
+      - _note: {fileID: 11400000, guid: a65ea7fae86fdb042bec2b01a6eb4642, type: 2}
+        _pitch: 6
+      - _note: {fileID: 11400000, guid: 242e097d894fc244bb1c6a8384a2a4ef, type: 2}
+        _pitch: 6
+    - _measureNotes:
+      - _note: {fileID: 11400000, guid: a65ea7fae86fdb042bec2b01a6eb4642, type: 2}
+        _pitch: 6
+      - _note: {fileID: 11400000, guid: 242e097d894fc244bb1c6a8384a2a4ef, type: 2}
+        _pitch: 6
+      - _note: {fileID: 11400000, guid: 0fdfbb5b3f44b1e409cb4c0b7c4dd1ad, type: 2}
+        _pitch: 1
+      - _note: {fileID: 11400000, guid: a65ea7fae86fdb042bec2b01a6eb4642, type: 2}
+        _pitch: 6
+      - _note: {fileID: 11400000, guid: 0fdfbb5b3f44b1e409cb4c0b7c4dd1ad, type: 2}
+        _pitch: 6
+      - _note: {fileID: 11400000, guid: 242e097d894fc244bb1c6a8384a2a4ef, type: 2}
+        _pitch: 6
+      - _note: {fileID: 11400000, guid: a65ea7fae86fdb042bec2b01a6eb4642, type: 2}
+        _pitch: 6
+      - _note: {fileID: 11400000, guid: 242e097d894fc244bb1c6a8384a2a4ef, type: 2}
+        _pitch: 6

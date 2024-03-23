@@ -10,6 +10,8 @@ public class MusicChartTemplate : ScriptableObject
     [SerializeField] private NoteChart _songChart;
 
     public NoteChart SongChart { get => _songChart; set => _songChart = value; }
+    public int BPM { get => _BPM; set => _BPM = value; }
+    public AudioClip Song { get => _song; set => _song = value; }
 
     /// <summary>
     /// Finds the time that the next note is played.
@@ -64,10 +66,15 @@ public class MusicChartTemplate : ScriptableObject
         {
             return GetNoteAtTime(noteTime + RhythmController.instance.BeatsPerLoop, targetMeasure - 1);
         }
+        if(noteTime > RhythmController.instance.BeatsPerLoop)
+        {
+            return GetNoteAtTime(noteTime - RhythmController.instance.BeatsPerLoop, targetMeasure + 1);
+        }
+
         MeasureChart currentMeasure = SongChart.Measures[targetMeasure];
         float elapsedTestTime = 0;
-        for (int i = 0; i <= currentMeasure.MeasureNotes.Length; i++)
-        {
+        for (int i = 0; i < currentMeasure.MeasureNotes.Length; i++)
+        { 
             if ((elapsedTestTime + currentMeasure.MeasureNotes[i].Note.NoteLength) > noteTime)
             {
                 
