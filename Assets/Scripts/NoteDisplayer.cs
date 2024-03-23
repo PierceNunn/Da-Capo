@@ -7,37 +7,22 @@ public class NoteDisplayer : MonoBehaviour
     [SerializeField] private GameObject _lastNoteDisplay;
     [SerializeField] private float _baseHeight;
     [SerializeField] private float _noteSpacingY;
-    //private IndividualNoteChart[] surroundingNotes = { null, null };
 
-    void Update()
-    {
-        /*IndividualNoteChart[] temp = RhythmController.instance.GetSurroundingNotes();
-        if (surroundingNotes[0] != temp[0])
-        {
-            print("change in notes detected");
-            surroundingNotes = RhythmController.instance.GetSurroundingNotes();
-            float[] surroundingNotesTime = RhythmController.instance.GetSurroundingNotesTime();
-            if (surroundingNotes[1] != temp[0])
-            {
-                GameObject newNoteBonus = Instantiate(_lastNoteDisplay);
-                newNoteBonus.GetComponent<NoteController>().SetIndividualNote(surroundingNotes[1],
-                    _noteSpacingY, _baseHeight, surroundingNotesTime[1]);
-            }
-            GameObject newNote = Instantiate(_lastNoteDisplay);
-            newNote.GetComponent<NoteController>().SetIndividualNote(surroundingNotes[0],
-                _noteSpacingY, _baseHeight, surroundingNotesTime[0]);
-        }*/
-
-        
-    }
+    /// <summary>
+    /// Calls LoadNotes for each measure on startup, loading all of the notes visually.
+    /// </summary>
     void Start()
     {
         for (int i = 0; i < RhythmController.instance.CurrentSong.SongChart.Measures.Length; i++)
         {
-            LoadNotes(i);
+            LoadNotes(i); //load notes for each measure
         }
     }
 
+    /// <summary>
+    /// Creates sprites with NoteControllers for each note in a measure.
+    /// </summary>
+    /// <param name="measure">the measure to perform the function on.</param>
     void LoadNotes(int measure)
     {
         MeasureChart toLoad = RhythmController.instance.CurrentSong.SongChart.Measures[measure];
