@@ -1,3 +1,12 @@
+/*****************************************************************************
+// File Name : MusicChartTemplate.cs
+// Author : Pierce Nunnelley
+// Creation Date : March 23, 2024
+//
+// Brief Description : This script acts as the template for Music Charts,
+// holding important information about a song as well as a NoteChart which
+// dictates the notes needed to hit
+*****************************************************************************/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

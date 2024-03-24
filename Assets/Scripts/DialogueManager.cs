@@ -1,3 +1,11 @@
+/*****************************************************************************
+// File Name : DialogueManager.cs
+// Author : Pierce Nunnelley
+// Creation Date : March 23, 2024
+//
+// Brief Description : This script controls the Dialogue UI and displays
+dialogue.
+*****************************************************************************/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,7 +21,6 @@ public class DialogueManager : MonoBehaviour
     private Queue<string> sentences;
     private Queue<string> nameTags;
     private Queue<Sprite> talkIMGs;
-    private Queue<AnimatorOverrideController> talkAnims;
     private Queue<AudioClip[]> voices;
     private Queue<bool> jitterStatuses;
     [SerializeField] private TextMeshProUGUI nameText;
@@ -27,29 +34,24 @@ public class DialogueManager : MonoBehaviour
     private GameObject currentRef;
     private bool isOpen = false;
     private int convoLen = 0;
-    PlayerInput pi;
 
     public bool IsOpen { get => isOpen; set => isOpen = value; }
 
+    /// <summary>
+    /// sets each queue as a new empty queue.
+    /// </summary>
     void Start()
     {
         sentences = new Queue<string>();
         nameTags = new Queue<string>();
         talkIMGs = new Queue<Sprite>();
-        talkAnims = new Queue<AnimatorOverrideController>();
         voices = new Queue<AudioClip[]>();
         jitterStatuses = new Queue<bool>();
-        pi = GetComponent<PlayerInput>();
     }
 
-    /*void Update()
-    {
-        if (pi.actions["Interact"].WasPressedThisFrame() && isOpen && !autoAdvance)
-        {
-            DisplayNextSentence();
-        }
-    }*/
-
+    /// <summary>
+    /// Displays the next sentence when the assigned Interact key is pressed.
+    /// </summary>
     public void OnInteract()
     {
         if(IsOpen && !autoAdvance)
@@ -59,38 +61,34 @@ public class DialogueManager : MonoBehaviour
     /// <summary>
     /// initializes a conversation from an outside source.
     /// </summary>
-    /// <param name="dialogue">An array of SingleDialogue classes containing information for the initialized conversation.</param>
+    /// <param name="dialogue">A SingleDialogue array containing information for the initialized conversation.</param>
+    /// <param name="NPC">The GameObject which initiates the conversation.</param>
+    /// <param name="willAutoAdvance">Determines if dialogue will advance automatically.</param>
     public void StartDialogue(SingleDialogue[] dialogue, GameObject NPC, bool willAutoAdvance)
     {
         IsOpen = true;
-        if (willAutoAdvance)
-        {
-            autoAdvance = true;
-        }
-        else
-        {
-            autoAdvance = false;
-        }
+        autoAdvance = willAutoAdvance;
         currentRef = NPC;
-        //animator.SetBool("isOpen", true);
-        //sentences.Clear();
-        //nameTags.Clear();
+        //clear all queues
+        sentences.Clear();
+        nameTags.Clear();
         talkIMGs.Clear();
-        talkAnims.Clear();
         voices.Clear();
         jitterStatuses.Clear();
+        //set all queues to new queues
         sentences = new Queue<string>();
         nameTags = new Queue<string>();
         talkIMGs = new Queue<Sprite>();
-        talkAnims = new Queue<AnimatorOverrideController>();
         voices = new Queue<AudioClip[]>();
         jitterStatuses = new Queue<bool>();
 
+        //set ui components to what they should be for the first dialogue
         nameText.text = dialogue[0].CharacterName;
         portrait.sprite = dialogue[0].PortraitImage;
-        portrait.SetNativeSize();
+        portrait.SetNativeSize(); //just in case any portraits have different dimensions
         convoLen = dialogue.Length + 1;
 
+        //enqueue all elements in order
         foreach (SingleDialogue line in dialogue)
         {
             sentences.Enqueue(line.sentences);
@@ -100,20 +98,24 @@ public class DialogueManager : MonoBehaviour
             jitterStatuses.Enqueue(line.JitterText);
         }
 
+        //display the first sentence
         DisplayNextSentence();
 
     }
 
+    /// <summary>
+    /// Displays the next sentence in the queue.
+    /// </summary>
     public void DisplayNextSentence()
     {
-        print("Diastartloge");
-        convoLen -= 1;
-        if (convoLen == 0)
+        convoLen--; //lower remaining length by 1
+        if (convoLen == 0) //end dialogue if remaining length is 0
         {
             EndDialogue();
-            return;
+            return; //if ending don't run rest of the function
         }
 
+        //dequeue element from each queue
         string sentence = sentences.Dequeue();
         string nameTag = nameTags.Dequeue();
         Sprite talkIMG = talkIMGs.Dequeue();
@@ -122,11 +124,14 @@ public class DialogueManager : MonoBehaviour
 
         print(sentence);
 
+        //coroutine for sentence so it can appear letter by letter
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence, voice));
+        //update ui elements
         nameText.text = nameTag;
         portrait.sprite = talkIMG;
-        portrait.SetNativeSize();
+        portrait.SetNativeSize(); //just in case any portraits have different dimensions
+        //play button sound
         buttonSound.GetComponent<AudioSource>().Play();
 
         if (isJitter)
@@ -150,7 +155,8 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text = "";
         foreach (char letter in sentence.ToCharArray())
         {
-            dialogueText.text += letter;
+            dialogueText.text += letter; //add letters of sentence individually
+            //clip isn't played for specific characters or when no voice is available
             if (voice != null && letter != " "[0] && letter != ","[0] && letter != "'"[0])
             {
                 int randomVChoice = Random.Range(0, voice.Length);
@@ -158,9 +164,9 @@ public class DialogueManager : MonoBehaviour
                 voicer.Play();
             }
 
-            yield return new WaitForSeconds(chatSpeed);
+            yield return new WaitForSeconds(chatSpeed); //wait until the next letter
         }
-        if (autoAdvance)
+        if (autoAdvance) //go straight to next sentence if autoAdvance is on
         {
             DisplayNextSentence();
         }
@@ -178,8 +184,6 @@ public class DialogueManager : MonoBehaviour
             IsOpen = false;
             //animator.SetBool("isOpen", false);
             Debug.Log("End of convo");
-            GameObject player = GameObject.Find("player");
-            //currentRef.GetComponent<NPC>().EndDialogueBehavior();
         }
 
 

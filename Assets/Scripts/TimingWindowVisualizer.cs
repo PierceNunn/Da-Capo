@@ -12,10 +12,17 @@ using UnityEngine;
 
 public class TimingWindowVisualizer : MonoBehaviour
 {
+    /// <summary>
+    /// Calls SetTimingWindow on start.
+    /// </summary>
     private void Start()
     {
         SetTimingWindow();
     }
+
+    /// <summary>
+    /// Sets the gameObject's width to roughly encapsulate the area that button presses are accepted per note.
+    /// </summary>
     void SetTimingWindow()
     {
         float timingWindow = RhythmController.instance.CurrentDifficulty.TimingWindow;

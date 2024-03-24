@@ -1,17 +1,26 @@
+/*****************************************************************************
+// File Name : RhythmController.cs
+// Author : Pierce Nunnelley
+// Creation Date : March 23, 2024
+//
+// Brief Description : This script primarily manages the moment-to-moment 
+// rhythm, extensively tracking time and position throughout the playing track
+// in several different ways for outside reference.
+*****************************************************************************/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class RhythmController : MonoBehaviour
 {
-    
-    private float songBPM;
     [SerializeField] private float beatsPerLoop;
-    [SerializeField] private int completedLoops = 0;
-    [SerializeField] private float loopPositionInBeats;
     [SerializeField] private DifficultyTemplate _currentDifficulty;
     [SerializeField] private MusicChartTemplate _currentSong;
 
+    private float songBPM;
+    private int completedLoops = 0;
+    private float loopPositionInBeats;
     private float secsPerBeat;
     private float songPos;
     private float songPosInBeats;
@@ -44,6 +53,9 @@ public class RhythmController : MonoBehaviour
         instance = this;
     }
 
+    /// <summary>
+    /// Set various values based on other information and begins the song.
+    /// </summary>
     void Start()
     {
         songBPM = _currentSong.BPM;
@@ -55,6 +67,9 @@ public class RhythmController : MonoBehaviour
         musicSource.Play();
     }
 
+    /// <summary>
+    /// Updates a variety of variables which need constant updating.
+    /// </summary>
     void Update()
     {
         if (songPosInBeats >= (CompletedLoops + 1) * BeatsPerLoop)
@@ -78,7 +93,10 @@ public class RhythmController : MonoBehaviour
         loopPositionInAnalog = LoopPositionInBeats / BeatsPerLoop;
     }
 
-
+    /// <summary>
+    /// Gets the notes immediately before and immediately after the current time, ignoring rests.
+    /// </summary>
+    /// <returns>An array holding the previous and next notes.</returns>
     public IndividualNoteChart[] GetSurroundingNotes()
     {
         IndividualNoteChart next = _currentSong.GetNextNote(loopPositionInBeats, CompletedLoops);
@@ -87,17 +105,10 @@ public class RhythmController : MonoBehaviour
         return output;
     }
 
-    public float GetLastMeasureNoteTime()
-    {
-        return _currentSong.GetGivenNoteTime(CompletedLoops - 1,
-            _currentSong.SongChart.Measures[CompletedLoops].MeasureNotes.Length);
-    }
-
-    public float GetNextMeasureNoteTime()
-    {
-        return _currentSong.GetGivenNoteTime(CompletedLoops + 1, 0);
-    }
-
+    /// <summary>
+    /// Gets the time of notes immediately before and immediately after the current time, ignoring rests.
+    /// </summary>
+    /// <returns>An array holding the previous and next notes' times.</returns>
     public float[] GetSurroundingNotesTime()
     {
         float next = _currentSong.GetNextNoteTime(CompletedLoops);

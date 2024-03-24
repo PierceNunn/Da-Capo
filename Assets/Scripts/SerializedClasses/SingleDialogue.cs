@@ -1,3 +1,12 @@
+/*****************************************************************************
+// File Name : SingleDialogue.cs
+// Author : Pierce Nunnelley
+// Creation Date : March 23, 2024
+//
+// Brief Description : This serializable script holds several variables for
+// passing into DialogueManager, allowing dialogue to be easily written and
+// read from in the editor.
+*****************************************************************************/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,8 +31,3 @@ public class SingleDialogue
     public RandomizedAudio CharacterVoice { get => _characterVoice; set => _characterVoice = value; }
 }
 
-[System.Serializable]
-public class MultiDialogue // for easy storage of repeat interacts
-{
-    public SingleDialogue[] dialogue;
-}
