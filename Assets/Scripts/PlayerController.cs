@@ -42,10 +42,12 @@ public class PlayerController : MonoBehaviour
         if(CheckButtonTiming(surroundingNoteTimes[0], pitch) || CheckButtonTiming(surroundingNoteTimes[1], pitch))
         {
             _hitSound.Play();
+            FindObjectOfType<PointsHandler>().NoteHitPoints();
             return true;
         }
 
         _missSound.Play();
+        FindObjectOfType<PointsHandler>().NoteMissPoints();
         return false;
     }
 
@@ -56,7 +58,7 @@ public class PlayerController : MonoBehaviour
 
         if (actualTime < timeToCheck + RhythmController.instance.CurrentDifficulty.TimingWindow &&
             actualTime > timeToCheck - RhythmController.instance.CurrentDifficulty.TimingWindow &&
-            pitch == targetNote.Pitch)
+            (pitch == targetNote.Pitch || RhythmController.instance.CurrentDifficulty.OneButtonMode))
         {
             return true;
         }

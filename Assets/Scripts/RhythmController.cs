@@ -11,12 +11,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RhythmController : MonoBehaviour
 {
     [SerializeField] private float beatsPerLoop;
     [SerializeField] private DifficultyTemplate _currentDifficulty;
     [SerializeField] private MusicChartTemplate _currentSong;
+    [SerializeField] private string _sceneToLoad;
 
     private float songBPM;
     private int completedLoops = 0;
@@ -77,6 +79,11 @@ public class RhythmController : MonoBehaviour
             CompletedLoops++;
             wholeBeats = -1;
             FindObjectOfType<Metronome>().MetronomeTick(secsPerBeat*beatsPerLoop);
+
+            if (completedLoops >= _currentSong.SongChart.Measures.Length) 
+            {
+                EndSongBehavior();
+            }
         }
         if(Mathf.Floor(LoopPositionInBeats) > wholeBeats)
         {
@@ -115,5 +122,10 @@ public class RhythmController : MonoBehaviour
         float last = _currentSong.GetLastNoteTime(loopPositionInBeats, CompletedLoops, measureTimeInBeats);
         float[] output = { last, next };
         return output;
+    }
+
+    void EndSongBehavior()
+    {
+        SceneManager.LoadScene(_sceneToLoad);
     }
 }

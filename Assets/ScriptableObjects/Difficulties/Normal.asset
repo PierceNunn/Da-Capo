@@ -15,3 +15,4 @@ MonoBehaviour:
   _timingWindow: 0.5
   _perfectTimingWindow: 0
   _oneButtonMode: 0
+  _scoreMultiplier: 2

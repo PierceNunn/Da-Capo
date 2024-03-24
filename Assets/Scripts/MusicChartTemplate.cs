@@ -78,11 +78,11 @@ public class MusicChartTemplate : ScriptableObject
     public IndividualNoteChart GetNoteAtTime(float noteTime, int targetMeasure)
     {
         //call self for a different measure if time is outside of bounds of measure
-        if(noteTime < 0f)
+        if(noteTime < 0f && targetMeasure > 0)
         {
             return GetNoteAtTime(noteTime + RhythmController.instance.BeatsPerLoop, targetMeasure - 1);
         }
-        if(noteTime > RhythmController.instance.BeatsPerLoop)
+        if(noteTime > RhythmController.instance.BeatsPerLoop && targetMeasure < SongChart.Measures.Length)
         {
             return GetNoteAtTime(noteTime - RhythmController.instance.BeatsPerLoop, targetMeasure + 1);
         }
