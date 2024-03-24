@@ -69,8 +69,15 @@ public class MusicChartTemplate : ScriptableObject
         return measureTimeInBeats;
     }
 
+    /// <summary>
+    /// Gets the note playing at a given time
+    /// </summary>
+    /// <param name="noteTime">the time at which to check</param>
+    /// <param name="targetMeasure">the index of the measure to start at.</param>
+    /// <returns></returns>
     public IndividualNoteChart GetNoteAtTime(float noteTime, int targetMeasure)
     {
+        //call self for a different measure if time is outside of bounds of measure
         if(noteTime < 0f)
         {
             return GetNoteAtTime(noteTime + RhythmController.instance.BeatsPerLoop, targetMeasure - 1);
@@ -95,6 +102,12 @@ public class MusicChartTemplate : ScriptableObject
         return SongChart.Measures[targetMeasure + 1].MeasureNotes[0];
     }
 
+    /// <summary>
+    /// Gets the time of a given note.
+    /// </summary>
+    /// <param name="measure">index of the measure to check.</param>
+    /// <param name="noteToGetTime">index of the note to check.</param>
+    /// <returns></returns>
     public float GetGivenNoteTime(int measure, int noteToGetTime)
     {
         MeasureChart currentMeasure = SongChart.Measures[measure];
@@ -107,10 +120,23 @@ public class MusicChartTemplate : ScriptableObject
         return returnValue;
     }
 
+    /// <summary>
+    /// Gets the next note to play.
+    /// </summary>
+    /// <param name="loopPositionInBeats">time through the current measure, in beats.</param>
+    /// <param name="completedLoops">index of measure to check.</param>
+    /// <returns>the next note to play.</returns>
     public IndividualNoteChart GetNextNote(float loopPositionInBeats, int completedLoops)
     {
         return GetNoteAtTime(GetNextNoteTime(completedLoops), completedLoops);
     }
+    /// <summary>
+    /// Gets the Last note to play.
+    /// </summary>
+    /// <param name="loopPositionInBeats">time through the current loop, in beats.</param>
+    /// <param name="completedLoops">index of measure to check.</param>
+    /// <param name="measureTimeInBeats">measure time in beats.</param>
+    /// <returns>the last note to play.</returns>
     public IndividualNoteChart GetLastNote(float loopPositionInBeats, int completedLoops, float measureTimeInBeats)
     {
         return GetNoteAtTime(GetLastNoteTime(loopPositionInBeats, completedLoops, measureTimeInBeats), completedLoops);

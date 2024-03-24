@@ -1,3 +1,11 @@
+/*****************************************************************************
+// File Name : NoteController.cs
+// Author : Pierce Nunnelley
+// Creation Date : March 23, 2024
+//
+// Brief Description : This script controls the note sprites which appear in
+// the level, including their position and movement
+*****************************************************************************/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +18,13 @@ public class NoteController : MonoBehaviour
     private float noteDestroyDistance = -25f;
     private float noteXPos;
 
-
+    /// <summary>
+    /// Sets the required values for the NoteController and sets its position.
+    /// </summary>
+    /// <param name="n">The IndividualNoteChart to use as reference.</param>
+    /// <param name="noteSpacingY">The space between each note on the scale.</param>
+    /// <param name="baseHeight">The starting height of the scale.</param>
+    /// <param name="_noteTime">the time at which the note plays.</param>
     public void SetIndividualNote(IndividualNoteChart n, float noteSpacingY, float baseHeight, float _noteTime)
     {
         note = n;
@@ -22,6 +36,10 @@ public class NoteController : MonoBehaviour
             baseHeight + (note.PitchHeightModifier() * _noteSpacingY), gameObject.transform.position.z);
     }
 
+    /// <summary>
+    /// moves the object based on its time relative to current time,
+    /// and destroys it after reaching a certain distance.
+    /// </summary>
     void Update()
     {
         noteXPos = noteTime - RhythmController.instance.SongPosInBeats;
