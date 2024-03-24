@@ -76,12 +76,12 @@ public class RhythmController : MonoBehaviour
         {
             CompletedLoops++;
             wholeBeats = -1;
-            FindObjectOfType<Metronome>().MetronomeTick(0);
+            FindObjectOfType<Metronome>().MetronomeTick(secsPerBeat*beatsPerLoop);
         }
         if(Mathf.Floor(LoopPositionInBeats) > wholeBeats)
         {
             wholeBeats++;
-            FindObjectOfType<Metronome>().MetronomeTick(0);
+            FindObjectOfType<Metronome>().MetronomeTick(secsPerBeat * beatsPerLoop);
         }
             
         LoopPositionInBeats = songPosInBeats - CompletedLoops * BeatsPerLoop;

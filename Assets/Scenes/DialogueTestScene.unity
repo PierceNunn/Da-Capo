@@ -340,9 +340,9 @@ RectTransform:
   m_Father: {fileID: 321621631}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -65, y: -53}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -65, y: 172}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &823901146
@@ -567,9 +567,9 @@ RectTransform:
   m_Father: {fileID: 321621631}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -62, y: -112}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -62, y: 113}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1030927571
@@ -700,92 +700,109 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _characterDialogue:
   - _portraitImage: {fileID: 21300000, guid: 2871178914819f8438af6550f2ceffd5, type: 3}
-    _characterName: ' '
+    _characterName: ' f'
     _characterVoice: {fileID: 11400000, guid: 49f13d9ffda165848bc4eefc70d33489, type: 2}
-    jitterText: 0
+    _jitterText: 0
     sentences: ...Hello?
+    _eventsToInvoke: []
   - _portraitImage: {fileID: 21300000, guid: aa7650bd263c3a849a6b950ae01689ce, type: 3}
     _characterName: Cadenza
     _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
-    jitterText: 0
+    _jitterText: 0
     sentences: Ah! Welcome + [USER_13345323] + !
+    _eventsToInvoke: []
   - _portraitImage: {fileID: 21300000, guid: 7146e1fb86492de43aa03a79d86fd014, type: 3}
     _characterName: 
     _characterVoice: {fileID: 11400000, guid: 49f13d9ffda165848bc4eefc70d33489, type: 2}
-    jitterText: 0
+    _jitterText: 0
     sentences: Oh, there you are.
+    _eventsToInvoke: []
   - _portraitImage: {fileID: 21300000, guid: aa7650bd263c3a849a6b950ae01689ce, type: 3}
     _characterName: Cadenza
     _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
-    jitterText: 0
+    _jitterText: 0
     sentences: Hmm, it doesn't look like you have a name attached to your ID. that's
       odd.
+    _eventsToInvoke: []
   - _portraitImage: {fileID: 21300000, guid: 7146e1fb86492de43aa03a79d86fd014, type: 3}
     _characterName: ' '
     _characterVoice: {fileID: 11400000, guid: 49f13d9ffda165848bc4eefc70d33489, type: 2}
-    jitterText: 0
+    _jitterText: 0
     sentences: I guess that would make sense. I was not assigned any sort of name.
+    _eventsToInvoke: []
   - _portraitImage: {fileID: 21300000, guid: aa7650bd263c3a849a6b950ae01689ce, type: 3}
     _characterName: Cadenza
     _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
-    jitterText: 0
+    _jitterText: 0
     sentences: Oh? Could it be--?
+    _eventsToInvoke: []
   - _portraitImage: {fileID: 21300000, guid: aa7650bd263c3a849a6b950ae01689ce, type: 3}
     _characterName: Cadenza
     _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
-    jitterText: 0
+    _jitterText: 0
     sentences: It appears so! You're not a user at all!
+    _eventsToInvoke: []
   - _portraitImage: {fileID: 21300000, guid: 7146e1fb86492de43aa03a79d86fd014, type: 3}
     _characterName: ' '
     _characterVoice: {fileID: 11400000, guid: 49f13d9ffda165848bc4eefc70d33489, type: 2}
-    jitterText: 0
+    _jitterText: 0
     sentences: Well, I am hoping to utilize your services regardless.
+    _eventsToInvoke: []
   - _portraitImage: {fileID: 21300000, guid: 2871178914819f8438af6550f2ceffd5, type: 3}
     _characterName: ' '
     _characterVoice: {fileID: 11400000, guid: 49f13d9ffda165848bc4eefc70d33489, type: 2}
-    jitterText: 0
+    _jitterText: 0
     sentences: My hypothesis is that learning the art of music will enable me to
       communicate more fluently with my operators.
+    _eventsToInvoke: []
   - _portraitImage: {fileID: 21300000, guid: 2871178914819f8438af6550f2ceffd5, type: 3}
     _characterName: ' '
     _characterVoice: {fileID: 11400000, guid: 49f13d9ffda165848bc4eefc70d33489, type: 2}
-    jitterText: 0
+    _jitterText: 0
     sentences: Music is the "universal language", correct?
+    _eventsToInvoke: []
   - _portraitImage: {fileID: 21300000, guid: aa7650bd263c3a849a6b950ae01689ce, type: 3}
     _characterName: Cadenza
     _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
-    jitterText: 0
+    _jitterText: 0
     sentences: Ohhh, struggling that much, huh?
+    _eventsToInvoke: []
   - _portraitImage: {fileID: 21300000, guid: aa7650bd263c3a849a6b950ae01689ce, type: 3}
     _characterName: Cadenza
     _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
-    jitterText: 0
+    _jitterText: 0
     sentences: Well, I dunno how much it'll help, but music is my forte!
+    _eventsToInvoke: []
   - _portraitImage: {fileID: 21300000, guid: aa7650bd263c3a849a6b950ae01689ce, type: 3}
     _characterName: Cadenza
     _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
-    jitterText: 0
+    _jitterText: 0
     sentences: My FORTE!!!!! if you will.
+    _eventsToInvoke: []
   - _portraitImage: {fileID: 21300000, guid: aa7650bd263c3a849a6b950ae01689ce, type: 3}
     _characterName: Cadenza
     _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
-    jitterText: 0
+    _jitterText: 0
     sentences: Get it? Music joke?
+    _eventsToInvoke: []
   - _portraitImage: {fileID: 21300000, guid: 3a22180e6767704428bfdd533e19392a, type: 3}
     _characterName: ' '
     _characterVoice: {fileID: 11400000, guid: 49f13d9ffda165848bc4eefc70d33489, type: 2}
-    jitterText: 0
+    _jitterText: 0
     sentences: ...?
+    _eventsToInvoke: []
   - _portraitImage: {fileID: 21300000, guid: 9c4f75ecf9ff7db4c9730b5d252520ca, type: 3}
     _characterName: Cadenza
     _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
-    jitterText: 0
+    _jitterText: 0
     sentences: ...
+    _eventsToInvoke: []
   - _portraitImage: {fileID: 21300000, guid: 9c4f75ecf9ff7db4c9730b5d252520ca, type: 3}
     _characterName: Cadenza
     _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
-    jitterText: 0
+    _jitterText: 0
     sentences: Let's uh. Let's just get started.
+    _eventsToInvoke: []
 --- !u!4 &1435800925
 Transform:
   m_ObjectHideFlags: 0
@@ -852,14 +869,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a232c973fcf4f5645b8d9a0f0b750121, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameText: {fileID: 823901146}
-  dialogueText: {fileID: 1030927571}
-  portrait: {fileID: 700994656}
-  animator: {fileID: 0}
-  voicer: {fileID: 1492912307}
-  chatSpeed: 0.07
-  autoAdvance: 0
-  buttonSound: {fileID: 1855036469}
+  _nameText: {fileID: 823901146}
+  _dialogueText: {fileID: 1030927571}
+  _portrait: {fileID: 700994656}
+  _animator: {fileID: 0}
+  _voicer: {fileID: 1492912307}
+  _chatSpeed: 0.08
+  _autoAdvance: 0
+  _buttonSound: {fileID: 1855036469}
 --- !u!82 &1492912307
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1197,7 +1214,7 @@ GameObject:
   - component: {fileID: 1845593732}
   - component: {fileID: 1845593731}
   m_Layer: 5
-  m_Name: Image
+  m_Name: DialogueBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1218,9 +1235,9 @@ RectTransform:
   m_Father: {fileID: 321621631}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1, y: -129}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 1, y: 96}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1845593731

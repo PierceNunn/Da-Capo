@@ -17,9 +17,11 @@ public class DifficultyTemplate : ScriptableObject
 {
     [SerializeField] private float _timingWindow; //permittable time before or after note where button press counts
     [SerializeField] private float _perfectTimingWindow; //permittable time before or after note for perfect hit
-    [SerializeField] private bool _oneButtonMode = false;
+    [SerializeField] private bool _oneButtonMode = false; //whether or not any button can be used
+    [SerializeField] private float _scoreMultiplier = 1; // magnifies the score gained from playing a level
 
     public float PerfectTimingWindow { get => _perfectTimingWindow; set => _perfectTimingWindow = value; }
     public float TimingWindow { get => _timingWindow; set => _timingWindow = value; }
     public bool OneButtonMode { get => _oneButtonMode; set => _oneButtonMode = value; }
+    public float ScoreMultiplier { get => _scoreMultiplier; set => _scoreMultiplier = value; }
 }

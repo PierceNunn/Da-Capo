@@ -21,7 +21,7 @@ public class NPC : MonoBehaviour
     /// </summary>
     void Start()
     {
-        Invoke("StartDialogue", 0.01f);
+        Invoke("StartDialogue", 0.1f);
     }
 
     /// <summary>

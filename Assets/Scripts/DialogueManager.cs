@@ -12,25 +12,23 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using TMPro;
+using UnityEngine.Events;
 
 /// <summary>
 /// controls the text box and displays dialogue and profile images for conversations.
 /// </summary>
 public class DialogueManager : MonoBehaviour
 {
-    private Queue<string> sentences;
-    private Queue<string> nameTags;
-    private Queue<Sprite> talkIMGs;
-    private Queue<AudioClip[]> voices;
-    private Queue<bool> jitterStatuses;
-    [SerializeField] private TextMeshProUGUI nameText;
-    [SerializeField] private TextMeshProUGUI dialogueText;
-    [SerializeField] private Image portrait;
-    [SerializeField] private Animator animator;
-    [SerializeField] private AudioSource voicer;
-    [SerializeField] private float chatSpeed = 0f;
-    [SerializeField] private bool autoAdvance = false;
-    [SerializeField] private GameObject buttonSound;
+
+    private Queue<SingleDialogue> dialogues;
+    [SerializeField] private TextMeshProUGUI _nameText;
+    [SerializeField] private TextMeshProUGUI _dialogueText;
+    [SerializeField] private Image _portrait;
+    [SerializeField] private Animator _animator;
+    [SerializeField] private AudioSource _voicer;
+    [SerializeField] private float _chatSpeed = 0f;
+    [SerializeField] private bool _autoAdvance = false;
+    [SerializeField] private GameObject _buttonSound;
     private GameObject currentRef;
     private bool isOpen = false;
     private int convoLen = 0;
@@ -42,11 +40,7 @@ public class DialogueManager : MonoBehaviour
     /// </summary>
     void Start()
     {
-        sentences = new Queue<string>();
-        nameTags = new Queue<string>();
-        talkIMGs = new Queue<Sprite>();
-        voices = new Queue<AudioClip[]>();
-        jitterStatuses = new Queue<bool>();
+        dialogues = new Queue<SingleDialogue>();
     }
 
     /// <summary>
@@ -54,7 +48,7 @@ public class DialogueManager : MonoBehaviour
     /// </summary>
     public void OnInteract()
     {
-        if(IsOpen && !autoAdvance)
+        if(IsOpen && !_autoAdvance)
             DisplayNextSentence();
     }
 
@@ -67,35 +61,23 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(SingleDialogue[] dialogue, GameObject NPC, bool willAutoAdvance)
     {
         IsOpen = true;
-        autoAdvance = willAutoAdvance;
+        _autoAdvance = willAutoAdvance;
         currentRef = NPC;
-        //clear all queues
-        sentences.Clear();
-        nameTags.Clear();
-        talkIMGs.Clear();
-        voices.Clear();
-        jitterStatuses.Clear();
-        //set all queues to new queues
-        sentences = new Queue<string>();
-        nameTags = new Queue<string>();
-        talkIMGs = new Queue<Sprite>();
-        voices = new Queue<AudioClip[]>();
-        jitterStatuses = new Queue<bool>();
+        //clear queue
+        dialogues.Clear();
+        //set queue to new queue
+        dialogues = new Queue<SingleDialogue>();
 
         //set ui components to what they should be for the first dialogue
-        nameText.text = dialogue[0].CharacterName;
-        portrait.sprite = dialogue[0].PortraitImage;
-        portrait.SetNativeSize(); //just in case any portraits have different dimensions
+        _nameText.text = dialogue[0].CharacterName;
+        _portrait.sprite = dialogue[0].PortraitImage;
+        _portrait.SetNativeSize(); //just in case any portraits have different dimensions
         convoLen = dialogue.Length + 1;
 
         //enqueue all elements in order
         foreach (SingleDialogue line in dialogue)
         {
-            sentences.Enqueue(line.sentences);
-            nameTags.Enqueue(line.CharacterName);
-            talkIMGs.Enqueue(line.PortraitImage);
-            voices.Enqueue(line.CharacterVoice.clips);
-            jitterStatuses.Enqueue(line.JitterText);
+            dialogues.Enqueue(line);
         }
 
         //display the first sentence
@@ -116,11 +98,14 @@ public class DialogueManager : MonoBehaviour
         }
 
         //dequeue element from each queue
-        string sentence = sentences.Dequeue();
-        string nameTag = nameTags.Dequeue();
-        Sprite talkIMG = talkIMGs.Dequeue();
-        AudioClip[] voice = voices.Dequeue();
-        bool isJitter = jitterStatuses.Dequeue();
+        SingleDialogue dialogue = dialogues.Dequeue();
+        string sentence = dialogue.sentences;
+        string nameTag = dialogue.CharacterName;
+        Sprite talkIMG = dialogue.PortraitImage;
+        AudioClip[] voice = dialogue.CharacterVoice.clips;
+        bool isJitter = dialogue.JitterText;
+        UnityEvent[] actions = dialogue.EventsToInvoke;
+
 
         print(sentence);
 
@@ -128,11 +113,11 @@ public class DialogueManager : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence, voice));
         //update ui elements
-        nameText.text = nameTag;
-        portrait.sprite = talkIMG;
-        portrait.SetNativeSize(); //just in case any portraits have different dimensions
+        _nameText.text = nameTag;
+        _portrait.sprite = talkIMG;
+        _portrait.SetNativeSize(); //just in case any portraits have different dimensions
         //play button sound
-        buttonSound.GetComponent<AudioSource>().Play();
+        _buttonSound.GetComponent<AudioSource>().Play();
 
         if (isJitter)
         {
@@ -141,6 +126,11 @@ public class DialogueManager : MonoBehaviour
         else
         {
             //dialogueText.gameObject.GetComponent<TextEffects>().StopJitter();
+        }
+
+        foreach(UnityEvent e in actions)
+        {
+            e.Invoke();
         }
     }
 
@@ -152,21 +142,21 @@ public class DialogueManager : MonoBehaviour
     /// <returns></returns>
     IEnumerator TypeSentence(string sentence, AudioClip[] voice)
     {
-        dialogueText.text = "";
+        _dialogueText.text = "";
         foreach (char letter in sentence.ToCharArray())
         {
-            dialogueText.text += letter; //add letters of sentence individually
+            _dialogueText.text += letter; //add letters of sentence individually
             //clip isn't played for specific characters or when no voice is available
             if (voice != null && letter != " "[0] && letter != ","[0] && letter != "'"[0])
             {
                 int randomVChoice = Random.Range(0, voice.Length);
-                voicer.clip = voice[randomVChoice];
-                voicer.Play();
+                _voicer.clip = voice[randomVChoice];
+                _voicer.Play();
             }
 
-            yield return new WaitForSeconds(chatSpeed); //wait until the next letter
+            yield return new WaitForSeconds(_chatSpeed); //wait until the next letter
         }
-        if (autoAdvance) //go straight to next sentence if autoAdvance is on
+        if (_autoAdvance) //go straight to next sentence if autoAdvance is on
         {
             DisplayNextSentence();
         }
