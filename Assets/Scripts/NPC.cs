@@ -10,7 +10,7 @@ public class NPC : MonoBehaviour
 
     void Start()
     {
-        Invoke("StartDialogue", 1f);
+        Invoke("StartDialogue", 0.01f);
     }
 
     void StartDialogue()
