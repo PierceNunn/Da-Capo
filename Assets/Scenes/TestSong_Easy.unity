@@ -2762,7 +2762,7 @@ MonoBehaviour:
   beatsPerLoop: 4
   _currentDifficulty: {fileID: 11400000, guid: 3fb653cddb3f6dc4ca31570a0b9f5bd6, type: 2}
   _currentSong: {fileID: 11400000, guid: a0101e78ee81a0a40b6449777ec0027f, type: 2}
-  _sceneToLoad: TestSong_Normal
+  _sceneToLoad: MidLevelCutscene
   loopPositionInAnalog: 0
   musicSource: {fileID: 0}
 --- !u!82 &2046575239
