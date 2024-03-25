@@ -28,7 +28,6 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private float _chatSpeed = 0f;
     [SerializeField] private bool _autoAdvance = false;
     [SerializeField] private GameObject _buttonSound;
-    [SerializeField] private Image _buttonPrompt;
     private GameObject currentRef;
     private bool isOpen = false;
     private int convoLen = 0;
@@ -128,8 +127,6 @@ public class DialogueManager : MonoBehaviour
             //dialogueText.gameObject.GetComponent<TextEffects>().StopJitter();
         }
 
-        _buttonPrompt.enabled = false;
-
         foreach(UnityEvent e in actions)
         {
             e.Invoke();
@@ -162,7 +159,6 @@ public class DialogueManager : MonoBehaviour
         {
             DisplayNextSentence();
         }
-        _buttonPrompt.enabled = true;
     }
 
 

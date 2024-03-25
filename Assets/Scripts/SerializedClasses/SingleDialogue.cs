@@ -7,7 +7,12 @@
 // passing into DialogueManager, allowing dialogue to be easily written and
 // read from in the editor.
 *****************************************************************************/
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
+using UnityEditor.UIElements;
+using UnityEngine.UIElements;
 using UnityEngine.Events;
 
 [System.Serializable]
