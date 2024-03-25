@@ -1,7 +1,7 @@
 /*****************************************************************************
 // File Name : NoteChart.cs
 // Author : Pierce Nunnelley
-// Creation Date : March 23, 2024
+// Creation Date : March 24, 2024
 //
 // Brief Description : This serializable script holds an array of MeasureCharts,
 // primarily for the sake of organization.

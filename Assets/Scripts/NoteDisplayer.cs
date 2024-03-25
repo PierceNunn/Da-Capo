@@ -1,3 +1,11 @@
+/*****************************************************************************
+// File Name : NoteDisplayer.cs
+// Author : Pierce Nunnelley
+// Creation Date : March 23, 2024
+//
+// Brief Description : This script spawns visual representations of the current
+// song, to appear in-game.
+*****************************************************************************/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
