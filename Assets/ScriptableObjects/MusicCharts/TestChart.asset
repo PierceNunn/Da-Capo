@@ -172,3 +172,6 @@ MonoBehaviour:
         _pitch: 4
       - _note: {fileID: 11400000, guid: 92d7c6fda5e471045b216df077a9fa79, type: 2}
         _pitch: 3
+    - _measureNotes:
+      - _note: {fileID: 11400000, guid: e678a87269e8504498f7d2240b8fe6f9, type: 2}
+        _pitch: 0

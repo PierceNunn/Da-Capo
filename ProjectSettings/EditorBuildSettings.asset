@@ -6,15 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/DialogueIntroduction.unity
-    guid: bbd23e91f146d734e9e67efaf8ab99ef
-  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 300565e533b1815468b332926a9d1a6b
+  - enabled: 1
+    path: Assets/Scenes/Cutscenes/DialogueIntroduction.unity
+    guid: bbd23e91f146d734e9e67efaf8ab99ef
   - enabled: 1
     path: Assets/Scenes/TestSong_Easy.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
+    path: Assets/Scenes/Cutscenes/MidLevelCutscene.unity
+    guid: 48ffee3ac180c7a45a6f91e2b739c1b0
+  - enabled: 1
     path: Assets/Scenes/TestSong_Normal.unity
-    guid: d43bb791cb01550469e27c2320fa1e9d
+    guid: 80203fc95590d6a499db4eea3b60bfec
   m_configObjects: {}

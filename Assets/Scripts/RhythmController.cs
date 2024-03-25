@@ -80,7 +80,7 @@ public class RhythmController : MonoBehaviour
             wholeBeats = -1;
             FindObjectOfType<Metronome>().MetronomeTick(secsPerBeat*beatsPerLoop);
 
-            if (completedLoops >= _currentSong.SongChart.Measures.Length) 
+            if (completedLoops >= _currentSong.SongChart.Measures.Length - 1) 
             {
                 EndSongBehavior();
             }
@@ -126,6 +126,7 @@ public class RhythmController : MonoBehaviour
 
     void EndSongBehavior()
     {
+        Destroy(FindObjectOfType<PlayerController>());
         SceneManager.LoadScene(_sceneToLoad);
     }
 }
