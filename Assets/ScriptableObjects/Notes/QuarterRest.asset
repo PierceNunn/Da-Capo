@@ -14,4 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _noteLength: 1
   _isRest: 1
-  _noteSprite: {fileID: -119631974, guid: bf289ffb59ff72d4a9917b2f24922195, type: 3}
+  _isSharp: 0
+  _isFlat: 0
+  _noteSprite: {fileID: 645852648, guid: bf289ffb59ff72d4a9917b2f24922195, type: 3}
