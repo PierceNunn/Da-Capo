@@ -20,8 +20,11 @@ public class SyncedRotation : MonoBehaviour
     /// </summary>
     void Update()
     {
-        float rot = Mathf.Floor(RhythmController.instance.loopPositionInAnalog * rotationInterval) / rotationInterval;
-        this.gameObject.transform.rotation = Quaternion.Euler(0, 0, Mathf.Lerp(0, 360,
+        
+        float rot = Mathf.Floor(Mathf.Tan(RhythmController.instance.loopPositionInAnalog) * rotationInterval) 
+            / rotationInterval;
+        this.gameObject.transform.rotation = Quaternion.Euler(this.gameObject.transform.rotation.eulerAngles.x,
+            this.gameObject.transform.rotation.eulerAngles.y, Mathf.Lerp(0, 360,
             rot));
     }
 }

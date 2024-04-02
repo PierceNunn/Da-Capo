@@ -2762,6 +2762,7 @@ MonoBehaviour:
   beatsPerLoop: 4
   _currentDifficulty: {fileID: 11400000, guid: 3fb653cddb3f6dc4ca31570a0b9f5bd6, type: 2}
   _currentSong: {fileID: 11400000, guid: a0101e78ee81a0a40b6449777ec0027f, type: 2}
+  _noteDisplayer: {fileID: 1284727062}
   _sceneToLoad: MidLevelCutscene
   loopPositionInAnalog: 0
   musicSource: {fileID: 0}
@@ -2776,7 +2777,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b4fcc50e02dfef443b4a675b565417d8, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.47
   m_Pitch: 1
   Loop: 0

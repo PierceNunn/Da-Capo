@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91afa085029231b4e88bd9dd53f5549c, type: 3}
   m_Name: Easy
   m_EditorClassIdentifier: 
-  _timingWindow: 0.7
+  _timingWindow: 0.25
   _perfectTimingWindow: 0
   _oneButtonMode: 1
+  _scoreMultiplier: 1

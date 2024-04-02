@@ -18,6 +18,7 @@ public class RhythmController : MonoBehaviour
     [SerializeField] private float beatsPerLoop;
     [SerializeField] private DifficultyTemplate _currentDifficulty;
     [SerializeField] private MusicChartTemplate _currentSong;
+    [SerializeField] private NoteDisplayer _noteDisplayer;
     [SerializeField] private string _sceneToLoad;
 
     private float songBPM;
@@ -27,8 +28,9 @@ public class RhythmController : MonoBehaviour
     private float songPos;
     private float songPosInBeats;
     private float measureTimeInBeats;
-    private float dspSongTime;
+    private double dspSongTime;
     private int wholeBeats = 1;
+    private bool songBegun = false;
 
     //The current relative position of the song within the loop measured between 0 and 1.
     public float loopPositionInAnalog;
@@ -42,7 +44,7 @@ public class RhythmController : MonoBehaviour
     public float SecsPerBeat { get => secsPerBeat; set => secsPerBeat = value; }
     public float SongPos { get => songPos; set => songPos = value; }
     public float SongPosInBeats { get => songPosInBeats; set => songPosInBeats = value; }
-    public float DspSongTime { get => dspSongTime; set => dspSongTime = value; }
+    public double DspSongTime { get => dspSongTime; set => dspSongTime = value; }
     public DifficultyTemplate CurrentDifficulty { get => _currentDifficulty; set => _currentDifficulty = value; }
     public float LoopPositionInBeats { get => loopPositionInBeats; set => loopPositionInBeats = value; }
     public MusicChartTemplate CurrentSong { get => _currentSong; set => _currentSong = value; }
@@ -60,13 +62,20 @@ public class RhythmController : MonoBehaviour
     /// </summary>
     void Start()
     {
+        Invoke("BeginSong", 1f);
+    }
+
+    void BeginSong()
+    {
         songBPM = _currentSong.BPM;
         musicSource = GetComponent<AudioSource>();
         musicSource.clip = _currentSong.Song;
         secsPerBeat = 60f / songBPM;
         measureTimeInBeats = BeatsPerLoop * secsPerBeat;
-        dspSongTime = (float)AudioSettings.dspTime;
-        musicSource.Play();
+        dspSongTime = AudioSettings.dspTime + 0.5;
+        musicSource.PlayScheduled(dspSongTime);
+        _noteDisplayer.InstantiateNotes();
+        songBegun = true;
     }
 
     /// <summary>
@@ -74,30 +83,34 @@ public class RhythmController : MonoBehaviour
     /// </summary>
     void Update()
     {
-        if (songPosInBeats >= (CompletedLoops + 1) * BeatsPerLoop)
+        if (songBegun)
         {
-            CompletedLoops++;
-            wholeBeats = -1;
-            FindObjectOfType<Metronome>().MetronomeTick(secsPerBeat*beatsPerLoop);
 
-            if (completedLoops >= _currentSong.SongChart.Measures.Length) 
+            if (songPosInBeats >= (CompletedLoops + 1) * BeatsPerLoop)
             {
-                EndSongBehavior();
+                CompletedLoops++;
+                wholeBeats = -1;
+                FindObjectOfType<Metronome>().MetronomeTick(secsPerBeat * beatsPerLoop);
+
+                if (completedLoops >= _currentSong.SongChart.Measures.Length)
+                {
+                    EndSongBehavior();
+                }
             }
+            if (Mathf.Floor(LoopPositionInBeats) > wholeBeats)
+            {
+                wholeBeats++;
+                FindObjectOfType<Metronome>().MetronomeTick(secsPerBeat * beatsPerLoop);
+            }
+
+            LoopPositionInBeats = songPosInBeats - CompletedLoops * BeatsPerLoop;
+
+            songPos = (float)(AudioSettings.dspTime - dspSongTime);
+
+            songPosInBeats = songPos / secsPerBeat;
+
+            loopPositionInAnalog = LoopPositionInBeats / BeatsPerLoop;
         }
-        if(Mathf.Floor(LoopPositionInBeats) > wholeBeats)
-        {
-            wholeBeats++;
-            FindObjectOfType<Metronome>().MetronomeTick(secsPerBeat * beatsPerLoop);
-        }
-            
-        LoopPositionInBeats = songPosInBeats - CompletedLoops * BeatsPerLoop;
-
-        songPos = (float)(AudioSettings.dspTime - dspSongTime);
-
-        songPosInBeats = songPos / secsPerBeat;
-
-        loopPositionInAnalog = LoopPositionInBeats / BeatsPerLoop;
     }
 
     /// <summary>

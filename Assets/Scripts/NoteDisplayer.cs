@@ -17,9 +17,9 @@ public class NoteDisplayer : MonoBehaviour
     [SerializeField] private float _noteSpacingY;
 
     /// <summary>
-    /// Calls LoadNotes for each measure on startup, loading all of the notes visually.
+    /// Calls LoadNotes for each measure, loading all of the notes visually.
     /// </summary>
-    void Start()
+    public void InstantiateNotes()
     {
         for (int i = 0; i < RhythmController.instance.CurrentSong.SongChart.Measures.Length; i++)
         {
