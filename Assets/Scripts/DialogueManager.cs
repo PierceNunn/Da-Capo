@@ -31,6 +31,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private Image _buttonPrompt;
     private GameObject currentRef;
     private bool isOpen = false;
+    private bool isTyping = false;
+    private string sentence;
     private int convoLen = 0;
 
     public bool IsOpen { get => isOpen; set => isOpen = value; }
@@ -49,7 +51,17 @@ public class DialogueManager : MonoBehaviour
     public void OnInteract()
     {
         if(IsOpen && !_autoAdvance)
-            DisplayNextSentence();
+        {
+            if (isTyping) //allows showing all dialogue instantly
+            {
+                isTyping = false;
+                StopAllCoroutines();
+                _dialogueText.text = sentence;
+                _buttonPrompt.enabled = true;
+            }
+            else
+                DisplayNextSentence();
+        }
     }
 
     /// <summary>
@@ -99,7 +111,7 @@ public class DialogueManager : MonoBehaviour
 
         //dequeue element from each queue
         SingleDialogue dialogue = dialogues.Dequeue();
-        string sentence = dialogue.sentences;
+        sentence = dialogue.sentences;
         string nameTag = dialogue.CharacterName;
         Sprite talkIMG = dialogue.PortraitImage;
         AudioClip[] voice = dialogue.CharacterVoice.clips;
@@ -144,6 +156,8 @@ public class DialogueManager : MonoBehaviour
     /// <returns></returns>
     IEnumerator TypeSentence(string sentence, AudioClip[] voice)
     {
+        isTyping = true;
+
         _dialogueText.text = "";
         foreach (char letter in sentence.ToCharArray())
         {
@@ -158,6 +172,8 @@ public class DialogueManager : MonoBehaviour
 
             yield return new WaitForSeconds(_chatSpeed); //wait until the next letter
         }
+
+        isTyping = false;
         if (_autoAdvance) //go straight to next sentence if autoAdvance is on
         {
             DisplayNextSentence();
