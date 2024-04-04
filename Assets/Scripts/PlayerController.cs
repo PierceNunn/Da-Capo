@@ -82,6 +82,7 @@ public class PlayerController : MonoBehaviour
 
         _missSound.Play();
         FindObjectOfType<PointsHandler>().NoteMissPoints();
+        FindObjectOfType<PlayerHealthManager>().loseHealth(1);
         return false;
     }
 
