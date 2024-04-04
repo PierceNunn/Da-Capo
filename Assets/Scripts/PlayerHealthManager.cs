@@ -22,6 +22,6 @@ public class PlayerHealthManager : MonoBehaviour
 
     public void gainHealth(float quantity)
     {
-        currentHealth += quantity;
+        currentHealth = (currentHealth + quantity >= maxHealth) ? maxHealth : (currentHealth + quantity);
     }
 }
