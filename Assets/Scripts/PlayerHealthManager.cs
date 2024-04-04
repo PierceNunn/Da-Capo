@@ -19,4 +19,9 @@ public class PlayerHealthManager : MonoBehaviour
     {
         currentHealth = (currentHealth - quantity <= 0) ? 0.1f : currentHealth - quantity;
     }
+
+    public void gainHealth(float quantity)
+    {
+        currentHealth += quantity;
+    }
 }

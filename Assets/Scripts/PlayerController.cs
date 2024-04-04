@@ -77,6 +77,8 @@ public class PlayerController : MonoBehaviour
         {
             _hitSound.Play();
             FindObjectOfType<PointsHandler>().NoteHitPoints();
+            FindObjectOfType<PlayerHealthManager>().gainHealth
+                (RhythmController.instance.CurrentDifficulty.HealthRegen);
             return true;
         }
 
