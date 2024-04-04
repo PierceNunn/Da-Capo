@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PlayerHealthManager : MonoBehaviour
 {
-    private uint currentHealth = 1;
+    private float currentHealth = 1;
     private uint maxHealth;
 
-    public uint CurrentHealth { get => currentHealth; set => currentHealth = value; }
+    public float CurrentHealth { get => currentHealth; set => currentHealth = value; }
 
     private void Start()
     {
@@ -17,6 +17,6 @@ public class PlayerHealthManager : MonoBehaviour
 
     public void loseHealth(uint quantity)
     {
-        currentHealth -= quantity;
+        currentHealth = (currentHealth - quantity <= 0) ? 0.1f : currentHealth - quantity;
     }
 }

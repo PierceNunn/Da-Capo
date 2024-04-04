@@ -18,7 +18,12 @@ public class ScoreUIHandler : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _comboDisplay;
     [SerializeField] private PointsHandler _currentPointsHandler;
     [SerializeField] private Image _healthBar;
-    [SerializeField] private int _healthBarWidthMultiplier;
+    private float healthBarWidthMultiplier;
+
+    private void Start()
+    {
+        healthBarWidthMultiplier = _healthBar.rectTransform.localScale.x;
+    }
     /// <summary>
     /// Change the given text to display the current points and combo.
     /// </summary>
@@ -27,8 +32,9 @@ public class ScoreUIHandler : MonoBehaviour
         _scoreDisplay.text = "Points: " + _currentPointsHandler.TotalPoints;
         _comboDisplay.text = "Combo: " + _currentPointsHandler.Combo;
 
-        int currentHealth = (int)FindObjectOfType<PlayerHealthManager>().CurrentHealth;
-        _healthBar.rectTransform.localPosition = new Vector2(currentHealth * _healthBarWidthMultiplier,
-            _healthBar.rectTransform.localPosition.y);
+        float currentHealth = (float)FindObjectOfType<PlayerHealthManager>().CurrentHealth + 0.0000001f;
+        int maxHealth = (int)RhythmController.instance.CurrentDifficulty.MaxHealth;
+        _healthBar.rectTransform.localScale = new Vector2((currentHealth / maxHealth) * healthBarWidthMultiplier,
+            _healthBar.rectTransform.localScale.y);
     }
 }
