@@ -16,3 +16,5 @@ MonoBehaviour:
   _perfectTimingWindow: 0
   _oneButtonMode: 1
   _scoreMultiplier: 1
+  _maxHealth: 25
+  _healthRegen: 0.5

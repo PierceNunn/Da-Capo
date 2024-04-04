@@ -12,6 +12,8 @@ using UnityEngine;
 
 public class NoteController : MonoBehaviour
 {
+    [SerializeField] private Sprite[] _letterSprites;
+    [SerializeField] private SpriteRenderer _letterDisplay;
     private IndividualNoteChart note;
     private float noteTime;
     private float _noteSpacingY;
@@ -34,6 +36,8 @@ public class NoteController : MonoBehaviour
         noteXPos = noteTime - RhythmController.instance.LoopPositionInBeats;
         gameObject.transform.position = new Vector3(noteXPos,
             baseHeight + (note.PitchHeightModifier() * _noteSpacingY), gameObject.transform.position.z);
+
+        _letterDisplay.sprite = _letterSprites[2];
     }
 
     /// <summary>
