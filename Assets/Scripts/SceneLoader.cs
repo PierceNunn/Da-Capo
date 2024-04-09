@@ -28,6 +28,12 @@ public class SceneLoader : MonoBehaviour
     {
         QueuedSongData.NextSong = _nextSong;
         QueuedSongData.NextDifficulty = _nextDifficulty;
+        if(RhythmController.instance != null)
+        {
+            RhythmController.instance.CurrentSong = _nextSong;
+            RhythmController.instance.CurrentDifficulty = _nextDifficulty;
+        }
+        
         LoadScene(sceneToLoad);
     }
 
