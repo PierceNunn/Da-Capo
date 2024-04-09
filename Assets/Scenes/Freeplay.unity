@@ -445,6 +445,7 @@ GameObject:
   - component: {fileID: 491730936}
   - component: {fileID: 491730935}
   - component: {fileID: 491730938}
+  - component: {fileID: 491730939}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -518,16 +519,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1458373429}
+      - m_Target: {fileID: 491730939}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: LoadScene
+        m_MethodName: LoadSong
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: TestSong_Normal
+          m_StringArgument: songArena
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &491730936
@@ -582,6 +583,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _topScoreDisplay: {fileID: 2056006865}
   _displayedSong: {fileID: 11400000, guid: a0101e78ee81a0a40b6449777ec0027f, type: 2}
+  _scoreCategoryToDisplay: 0
+--- !u!114 &491730939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491730933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac853edc0ed53a42b8883ebd2ed4b8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _nextSong: {fileID: 11400000, guid: a0101e78ee81a0a40b6449777ec0027f, type: 2}
+  _nextDifficulty: {fileID: 11400000, guid: 3fb653cddb3f6dc4ca31570a0b9f5bd6, type: 2}
 --- !u!1 &628515292
 GameObject:
   m_ObjectHideFlags: 0
@@ -1513,6 +1529,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ac853edc0ed53a42b8883ebd2ed4b8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _nextSong: {fileID: 0}
+  _nextDifficulty: {fileID: 0}
 --- !u!1 &1483606443
 GameObject:
   m_ObjectHideFlags: 0
@@ -1580,8 +1598,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2105,8 +2123,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

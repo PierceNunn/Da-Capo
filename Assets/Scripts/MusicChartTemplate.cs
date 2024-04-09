@@ -17,7 +17,7 @@ public class MusicChartTemplate : ScriptableObject
     [SerializeField] private AudioClip _song;
     [SerializeField] private int _BPM;
     [SerializeField] private NoteChart _songChart;
-    [SerializeField] private int[] _bestScores = { 0 };
+    [SerializeField] private int[] _bestScores = { 0, 0, 0 };
 
     public NoteChart SongChart { get => _songChart; set => _songChart = value; }
     public int BPM { get => _BPM; set => _BPM = value; }

@@ -2388,7 +2388,6 @@ MonoBehaviour:
   _lastNoteDisplay: {fileID: 5494880294965627381, guid: f5f1096404a749b4180fc53ad0822fc6, type: 3}
   _baseHeight: 0
   _noteSpacingY: 0.25
-  _letterSprites: []
 --- !u!212 &1284727063
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3383,7 +3382,7 @@ MonoBehaviour:
   _currentDifficulty: {fileID: 11400000, guid: 3fb653cddb3f6dc4ca31570a0b9f5bd6, type: 2}
   _currentSong: {fileID: 11400000, guid: a0101e78ee81a0a40b6449777ec0027f, type: 2}
   _noteDisplayer: {fileID: 1284727062}
-  _sceneToLoad: MidLevelCutscene
+  _sceneToLoad: MainMenu
   loopPositionInAnalog: 0
   musicSource: {fileID: 0}
 --- !u!82 &2046575239
