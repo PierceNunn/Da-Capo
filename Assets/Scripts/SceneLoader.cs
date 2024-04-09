@@ -13,6 +13,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
+    [SerializeField] private MusicChartTemplate _nextSong;
+    [SerializeField] private DifficultyTemplate _nextDifficulty;
     /// <summary>
     /// Loads a scene.
     /// </summary>
@@ -21,4 +23,12 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene(sceneToLoad);
     }
+
+    public void LoadSong(string sceneToLoad)
+    {
+        QueuedSongData.NextSong = _nextSong;
+        QueuedSongData.NextDifficulty = _nextDifficulty;
+        LoadScene(sceneToLoad);
+    }
+
 }

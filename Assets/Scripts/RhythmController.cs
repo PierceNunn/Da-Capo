@@ -62,6 +62,8 @@ public class RhythmController : MonoBehaviour
     /// </summary>
     void Start()
     {
+        _currentSong = QueuedSongData.NextSong;
+        _currentDifficulty = QueuedSongData.NextDifficulty;
         Invoke("BeginSong", 1f);
     }
 
