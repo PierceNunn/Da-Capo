@@ -141,7 +141,8 @@ public class RhythmController : MonoBehaviour
 
     void EndSongBehavior()
     {
-        _currentSong.BestScores[0] = FindObjectOfType<PointsHandler>().TotalPoints;
+        print("current diffy = " + (int)_currentDifficulty.Category);
+        _currentSong.BestScores[(int)_currentDifficulty.Category] = FindObjectOfType<PointsHandler>().TotalPoints;
         SceneManager.LoadScene(_sceneToLoad);
     }
 }
