@@ -17,10 +17,12 @@ public class MusicChartTemplate : ScriptableObject
     [SerializeField] private AudioClip _song;
     [SerializeField] private int _BPM;
     [SerializeField] private NoteChart _songChart;
+    private int[] bestScores = { 999 };
 
     public NoteChart SongChart { get => _songChart; set => _songChart = value; }
     public int BPM { get => _BPM; set => _BPM = value; }
     public AudioClip Song { get => _song; set => _song = value; }
+    public int[] BestScores { get => bestScores; set => bestScores = value; }
 
     /// <summary>
     /// Finds the time that the next note is played.
