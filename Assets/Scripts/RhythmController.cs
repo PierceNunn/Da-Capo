@@ -64,6 +64,7 @@ public class RhythmController : MonoBehaviour
     {
         _currentSong = QueuedSongData.NextSong;
         _currentDifficulty = QueuedSongData.NextDifficulty;
+        _sceneToLoad = QueuedSongData.NextScene;
         Invoke("BeginSong", 1f);
     }
 

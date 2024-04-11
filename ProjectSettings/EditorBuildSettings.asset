@@ -6,24 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
+    path: Assets/Scenes/Menus/MainMenu.unity
     guid: 300565e533b1815468b332926a9d1a6b
   - enabled: 1
-    path: Assets/Scenes/SongArena.unity
+    path: Assets/Scenes/Arenas/SongArena.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/TestSong_Normal.unity
     guid: abd1cca7fb06e4a498f0491c7a98e028
   - enabled: 1
-    path: Assets/Scenes/Cutscenes/DialogueIntroduction.unity
+    path: Assets/Scenes/Cutscenes/Level 1/DialogueIntroduction.unity
     guid: eec3651030e194647bd4660e7f95ed82
   - enabled: 1
-    path: Assets/Scenes/Cutscenes/EndLevelCutscene.unity
+    path: Assets/Scenes/Cutscenes/Level 1/EndLevelCutscene.unity
     guid: 291cf8d56b9d6d94e98f5481cbb8f251
   - enabled: 1
-    path: Assets/Scenes/Cutscenes/MidLevelCutscene.unity
+    path: Assets/Scenes/Cutscenes/Level 1/MidLevelCutscene.unity
     guid: c1f75c95d952c834f91ed158d38aadee
   - enabled: 1
-    path: Assets/Scenes/Freeplay.unity
+    path: Assets/Scenes/Menus/Freeplay.unity
     guid: 2e2a1b8178ee07746bb13b940069d4d6
   m_configObjects: {}

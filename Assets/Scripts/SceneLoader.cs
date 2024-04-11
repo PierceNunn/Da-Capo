@@ -15,6 +15,7 @@ public class SceneLoader : MonoBehaviour
 {
     [SerializeField] private MusicChartTemplate _nextSong;
     [SerializeField] private DifficultyTemplate _nextDifficulty;
+    [SerializeField] private string _postSongScene;
     /// <summary>
     /// Loads a scene.
     /// </summary>
@@ -28,6 +29,7 @@ public class SceneLoader : MonoBehaviour
     {
         QueuedSongData.NextSong = _nextSong;
         QueuedSongData.NextDifficulty = _nextDifficulty;
+        QueuedSongData.NextScene = _postSongScene;
         if(RhythmController.instance != null)
         {
             RhythmController.instance.CurrentSong = _nextSong;

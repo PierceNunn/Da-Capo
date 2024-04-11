@@ -340,6 +340,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: a0101e78ee81a0a40b6449777ec0027f, type: 2}
     - target: {fileID: 3432855881200045031, guid: 2b0430938e776114c9e6677f628e0948, type: 3}
+      propertyPath: _postSongScene
+      value: EndLevelCutscene
+      objectReference: {fileID: 0}
+    - target: {fileID: 3432855881200045031, guid: 2b0430938e776114c9e6677f628e0948, type: 3}
       propertyPath: _nextDifficulty
       value: 
       objectReference: {fileID: 11400000, guid: fa5245fc481ebb44089e7854ff47a195, type: 2}
