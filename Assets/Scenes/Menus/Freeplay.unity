@@ -598,6 +598,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _nextSong: {fileID: 11400000, guid: a0101e78ee81a0a40b6449777ec0027f, type: 2}
   _nextDifficulty: {fileID: 11400000, guid: 3fb653cddb3f6dc4ca31570a0b9f5bd6, type: 2}
+  _postSongScene: Freeplay
 --- !u!1 &628515292
 GameObject:
   m_ObjectHideFlags: 0
@@ -1803,6 +1804,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _nextSong: {fileID: 0}
   _nextDifficulty: {fileID: 0}
+  _postSongScene: 
 --- !u!1 &1483606443
 GameObject:
   m_ObjectHideFlags: 0
@@ -2253,6 +2255,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _nextSong: {fileID: 11400000, guid: a0101e78ee81a0a40b6449777ec0027f, type: 2}
   _nextDifficulty: {fileID: 11400000, guid: fa5245fc481ebb44089e7854ff47a195, type: 2}
+  _postSongScene: Freeplay
 --- !u!114 &1927108291
 MonoBehaviour:
   m_ObjectHideFlags: 0
