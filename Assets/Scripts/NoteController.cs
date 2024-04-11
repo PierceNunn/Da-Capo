@@ -37,7 +37,7 @@ public class NoteController : MonoBehaviour
         gameObject.transform.position = new Vector3(noteXPos,
             baseHeight + (note.PitchHeightModifier() * _noteSpacingY), gameObject.transform.position.z);
 
-        _letterDisplay.sprite = _letterSprites[2];
+        _letterDisplay.sprite = _letterSprites[((int)note.Pitch)];
     }
 
     /// <summary>

@@ -447,7 +447,7 @@ GameObject:
   - component: {fileID: 491730938}
   - component: {fileID: 491730939}
   m_Layer: 5
-  m_Name: TestSongEasy
+  m_Name: Begin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -521,14 +521,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 491730939}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: LoadSong
+        m_MethodName: LoadScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: songArena
+          m_StringArgument: DialogueIntroduction
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &491730936
@@ -598,6 +598,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _nextSong: {fileID: 11400000, guid: a0101e78ee81a0a40b6449777ec0027f, type: 2}
   _nextDifficulty: {fileID: 11400000, guid: 3fb653cddb3f6dc4ca31570a0b9f5bd6, type: 2}
+  _postSongScene: 
 --- !u!1 &628515292
 GameObject:
   m_ObjectHideFlags: 0
@@ -1298,7 +1299,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Normal
+  m_text: Begin (Skip Lesson)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1325,8 +1326,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 15.49
+  m_fontSizeBase: 15.49
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1387,7 +1388,7 @@ GameObject:
   - component: {fileID: 1073983773}
   - component: {fileID: 1073983772}
   m_Layer: 5
-  m_Name: Test Song
+  m_Name: Level 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1435,7 +1436,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Test Song
+  m_text: Level 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1803,6 +1804,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _nextSong: {fileID: 0}
   _nextDifficulty: {fileID: 0}
+  _postSongScene: 
 --- !u!1 &1483606443
 GameObject:
   m_ObjectHideFlags: 0
@@ -1861,9 +1863,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Easy
-
-'
+  m_text: Begin
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2211,7 +2211,7 @@ GameObject:
   - component: {fileID: 1927108291}
   - component: {fileID: 1927108290}
   m_Layer: 5
-  m_Name: TestSongNormal
+  m_Name: SkipLesson
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2236,7 +2236,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2, y: -89}
+  m_AnchoredPosition: {x: 2, y: -73}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1927108290
@@ -2252,7 +2252,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _nextSong: {fileID: 11400000, guid: a0101e78ee81a0a40b6449777ec0027f, type: 2}
-  _nextDifficulty: {fileID: 11400000, guid: fa5245fc481ebb44089e7854ff47a195, type: 2}
+  _nextDifficulty: {fileID: 11400000, guid: e514f772e47c80e429bd103b17830f25, type: 2}
+  _postSongScene: MidLevelCutscene
 --- !u!114 &1927108291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2513,7 +2514,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2056006864
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2685,7 +2686,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2103391798
 RectTransform:
   m_ObjectHideFlags: 0
