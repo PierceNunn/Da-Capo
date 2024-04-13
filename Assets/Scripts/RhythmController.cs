@@ -15,6 +15,7 @@ using UnityEngine.SceneManagement;
 
 public class RhythmController : MonoBehaviour
 {
+    [SerializeField] private bool _loadFromQueuedSong = true;
     [SerializeField] private float beatsPerLoop;
     [SerializeField] private DifficultyTemplate _currentDifficulty;
     [SerializeField] private MusicChartTemplate _currentSong;
@@ -62,9 +63,12 @@ public class RhythmController : MonoBehaviour
     /// </summary>
     void Start()
     {
-        _currentSong = QueuedSongData.NextSong;
-        _currentDifficulty = QueuedSongData.NextDifficulty;
-        _sceneToLoad = QueuedSongData.NextScene;
+        if (_loadFromQueuedSong)
+        {
+            _currentSong = QueuedSongData.NextSong;
+            _currentDifficulty = QueuedSongData.NextDifficulty;
+            _sceneToLoad = QueuedSongData.NextScene;
+        }
         Invoke("BeginSong", 1f);
     }
 
