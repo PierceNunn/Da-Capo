@@ -51,7 +51,7 @@ public class IndividualNoteChart
             case (possiblePitches.F):
                 return 8;
             case (possiblePitches.G):
-                return 9;
+                return 2;
             default:
                 return 0;
         }

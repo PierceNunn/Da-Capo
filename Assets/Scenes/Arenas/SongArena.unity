@@ -2294,7 +2294,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1184757157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3927,6 +3927,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 549828f13a9d352468b156ed90d970b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _loadFromQueuedSong: 0
   beatsPerLoop: 4
   _currentDifficulty: {fileID: 11400000, guid: 3fb653cddb3f6dc4ca31570a0b9f5bd6, type: 2}
   _currentSong: {fileID: 11400000, guid: a0101e78ee81a0a40b6449777ec0027f, type: 2}
