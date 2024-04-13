@@ -26,7 +26,7 @@ public class TimingWindowVisualizer : MonoBehaviour
     void SetTimingWindow()
     {
         float timingWindow = RhythmController.instance.CurrentDifficulty.TimingWindow;
-        gameObject.transform.localScale = new Vector3(gameObject.transform.localScale.x, timingWindow * 1.75f,
-            gameObject.transform.localScale.z);
+        gameObject.transform.localScale = new Vector3(gameObject.transform.localScale.x, timingWindow * 1.75f 
+            * RhythmController.instance.CurrentDifficulty.ScrollSpeed, gameObject.transform.localScale.z);
     }
 }

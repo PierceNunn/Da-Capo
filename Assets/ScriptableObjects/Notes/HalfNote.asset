@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5042b12d012b53a4a992df09e46375c4, type: 3}
-  m_Name: HalfRest
+  m_Name: HalfNote
   m_EditorClassIdentifier: 
   _noteLength: 2
-  _isRest: 1
+  _isRest: 0
   _isSharp: 0
   _isFlat: 0
-  _noteSprite: {fileID: -612825933, guid: bf289ffb59ff72d4a9917b2f24922195, type: 3}
+  _noteSprite: {fileID: 1501659947, guid: cadef6a417a041949a1c3dd40fa69635, type: 3}

@@ -28,6 +28,7 @@ public class DifficultyTemplate : ScriptableObject
     [SerializeField] private float _scoreMultiplier = 1; // magnifies the score gained from playing a level
     [SerializeField] private uint _maxHealth = 5;
     [SerializeField] private float _healthRegen = 1;
+    [SerializeField] private float _scrollSpeed = 1;
     [SerializeField] private scoreCategories _category;
 
     public float PerfectTimingWindow { get => _perfectTimingWindow; set => _perfectTimingWindow = value; }
@@ -37,4 +38,5 @@ public class DifficultyTemplate : ScriptableObject
     public uint MaxHealth { get => _maxHealth; set => _maxHealth = value; }
     public float HealthRegen { get => _healthRegen; set => _healthRegen = value; }
     public scoreCategories Category { get => _category; set => _category = value; }
+    public float ScrollSpeed { get => _scrollSpeed; set => _scrollSpeed = value; }
 }

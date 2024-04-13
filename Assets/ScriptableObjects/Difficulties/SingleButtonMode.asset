@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91afa085029231b4e88bd9dd53f5549c, type: 3}
   m_Name: SingleButtonMode
   m_EditorClassIdentifier: 
-  _timingWindow: 0.25
+  _timingWindow: 0.5
   _perfectTimingWindow: 0
   _oneButtonMode: 1
   _scoreMultiplier: 0.5
   _maxHealth: 25
   _healthRegen: 0.5
+  _scrollSpeed: 1
   _category: 0

@@ -46,7 +46,8 @@ public class NoteController : MonoBehaviour
     /// </summary>
     void Update()
     {
-        noteXPos = noteTime - RhythmController.instance.SongPosInBeats;
+        noteXPos = (noteTime - RhythmController.instance.SongPosInBeats) 
+            * RhythmController.instance.CurrentDifficulty.ScrollSpeed;
         if (noteXPos < noteDestroyDistance)
             Destroy(gameObject);
         gameObject.transform.position = new Vector3(noteXPos, gameObject.transform.position.y,
