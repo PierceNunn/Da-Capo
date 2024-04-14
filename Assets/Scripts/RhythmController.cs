@@ -21,6 +21,7 @@ public class RhythmController : MonoBehaviour
     [SerializeField] private MusicChartTemplate _currentSong;
     [SerializeField] private NoteDisplayer _noteDisplayer;
     [SerializeField] private string _sceneToLoad;
+    [SerializeField] private Canvas _resultsScreen;
 
     private float songBPM;
     private int completedLoops = 0;
@@ -148,6 +149,12 @@ public class RhythmController : MonoBehaviour
     {
         if(_currentSong.BestScores[(int)_currentDifficulty.Category] < FindObjectOfType<PointsHandler>().TotalPoints)
             _currentSong.BestScores[(int)_currentDifficulty.Category] = FindObjectOfType<PointsHandler>().TotalPoints;
+        _resultsScreen.gameObject.SetActive(true);
+        FindObjectOfType<ResultsScreenManager>().displayResults();
+    }
+
+    public void LoadNextScene()
+    {
         SceneManager.LoadScene(_sceneToLoad);
     }
 }
