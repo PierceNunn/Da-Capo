@@ -38,9 +38,9 @@ public class NoteController : MonoBehaviour
         gameObject.transform.position = new Vector3(noteXPos,
             baseHeight + (note.PitchHeightModifier() * _noteSpacingY), gameObject.transform.position.z);
 
-        if (RhythmController.instance.CurrentDifficulty.OneButtonMode)
+        if (RhythmController.instance.CurrentDifficulty.OneButtonMode || n.Note.IsRest)
         {
-            //hide letter display if in One Button Mode
+            //hide letter display if in One Button Mode or a rest
             _letterDisplay.color = new Color(0, 0, 0, 0);
         }
         else if (RhythmController.instance.CurrentDifficulty.FourButtonMode)
