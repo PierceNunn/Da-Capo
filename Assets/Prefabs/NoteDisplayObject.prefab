@@ -106,6 +106,7 @@ MonoBehaviour:
   - {fileID: -1214400723, guid: 29c62e4dcc84be94a8ed42127396ff02, type: 3}
   - {fileID: -162822810, guid: 29c62e4dcc84be94a8ed42127396ff02, type: 3}
   - {fileID: 520636893, guid: 29c62e4dcc84be94a8ed42127396ff02, type: 3}
+  _arrowSprite: {fileID: 21300000, guid: ff4e2799611e0c440a09867706acf5db, type: 3}
   _letterDisplay: {fileID: 1222240119344189779}
 --- !u!1 &7557316054656895831
 GameObject:

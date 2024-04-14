@@ -8,6 +8,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -19,7 +20,8 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     public void OnNoteA()
     {
-        IsButtonTimed(IndividualNoteChart.possiblePitches.A);
+        if (!RhythmController.instance.CurrentDifficulty.FourButtonMode)
+            IsButtonTimed(IndividualNoteChart.possiblePitches.A);
     }
     /// <summary>
     /// Calls IsButtonTimed with the pitch of B.
@@ -40,7 +42,9 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     public void OnNoteD()
     {
-        IsButtonTimed(IndividualNoteChart.possiblePitches.D);
+        if(!RhythmController.instance.CurrentDifficulty.FourButtonMode)
+            IsButtonTimed(IndividualNoteChart.possiblePitches.D);
+        
     }
     /// <summary>
     /// Calls IsButtonTimed with the pitch of E.
@@ -64,6 +68,24 @@ public class PlayerController : MonoBehaviour
         IsButtonTimed(IndividualNoteChart.possiblePitches.G);
     }
 
+    public void OnSimpleNotes(InputValue iValue)
+    {
+        Vector2 inputMovement = iValue.Get<Vector2>();
+        if(RhythmController.instance.CurrentDifficulty.FourButtonMode)
+        {
+            if (inputMovement.x == 1)
+                IsButtonTimed(IndividualNoteChart.possiblePitches.A);
+            if (inputMovement.x == -1)
+                IsButtonTimed(IndividualNoteChart.possiblePitches.C);
+            if (inputMovement.y == 1)
+                IsButtonTimed(IndividualNoteChart.possiblePitches.E);
+            if (inputMovement.y == -1)
+                IsButtonTimed(IndividualNoteChart.possiblePitches.G);
+        }
+        
+        
+    }
+
     /// <summary>
     /// Checks if a button press counts as a successful hit or not.
     /// </summary>
@@ -73,19 +95,42 @@ public class PlayerController : MonoBehaviour
     {
         float[] surroundingNoteTimes = RhythmController.instance.GetSurroundingNotesTime();
 
+        if(RhythmController.instance.CurrentDifficulty.FourButtonMode && pitch != 
+            IndividualNoteChart.possiblePitches.G)
+        {
+
+            IndividualNoteChart.possiblePitches checkingPitch = pitch + 1;
+            if (CheckButtonTiming(surroundingNoteTimes[0], checkingPitch) ||
+                CheckButtonTiming(surroundingNoteTimes[1], checkingPitch))
+            {
+                NoteHitBehavior();
+                return true;
+            }
+        }
+
         if(CheckButtonTiming(surroundingNoteTimes[0], pitch) || CheckButtonTiming(surroundingNoteTimes[1], pitch))
         {
-            _hitSound.Play();
-            FindObjectOfType<PointsHandler>().NoteHitPoints();
-            FindObjectOfType<PlayerHealthManager>().gainHealth
-                (RhythmController.instance.CurrentDifficulty.HealthRegen);
+            NoteHitBehavior();
             return true;
         }
 
+        NoteMissBehavior();
+        return false;
+    }
+
+    public void NoteHitBehavior()
+    {
+        _hitSound.Play();
+        FindObjectOfType<PointsHandler>().NoteHitPoints();
+        FindObjectOfType<PlayerHealthManager>().gainHealth
+        (RhythmController.instance.CurrentDifficulty.HealthRegen);
+    }
+
+    public void NoteMissBehavior()
+    {
         _missSound.Play();
         FindObjectOfType<PointsHandler>().NoteMissPoints();
         FindObjectOfType<PlayerHealthManager>().loseHealth(1);
-        return false;
     }
 
     /// <summary>

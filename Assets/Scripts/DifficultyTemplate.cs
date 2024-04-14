@@ -25,6 +25,7 @@ public class DifficultyTemplate : ScriptableObject
     [SerializeField] private float _timingWindow; //permittable time before or after note where button press counts
     [SerializeField] private float _perfectTimingWindow; //permittable time before or after note for perfect hit
     [SerializeField] private bool _oneButtonMode = false; //whether or not any button can be used
+    [SerializeField] private bool _fourButtonMode = false;
     [SerializeField] private float _scoreMultiplier = 1; // magnifies the score gained from playing a level
     [SerializeField] private uint _maxHealth = 5;
     [SerializeField] private float _healthRegen = 1;
@@ -39,4 +40,5 @@ public class DifficultyTemplate : ScriptableObject
     public float HealthRegen { get => _healthRegen; set => _healthRegen = value; }
     public scoreCategories Category { get => _category; set => _category = value; }
     public float ScrollSpeed { get => _scrollSpeed; set => _scrollSpeed = value; }
+    public bool FourButtonMode { get => _fourButtonMode; set => _fourButtonMode = value; }
 }

@@ -13,6 +13,7 @@ using UnityEngine;
 public class NoteController : MonoBehaviour
 {
     [SerializeField] private Sprite[] _letterSprites;
+    [SerializeField] private Sprite _arrowSprite;
     [SerializeField] private SpriteRenderer _letterDisplay;
     private IndividualNoteChart note;
     private float noteTime;
@@ -37,7 +38,33 @@ public class NoteController : MonoBehaviour
         gameObject.transform.position = new Vector3(noteXPos,
             baseHeight + (note.PitchHeightModifier() * _noteSpacingY), gameObject.transform.position.z);
 
-        _letterDisplay.sprite = _letterSprites[((int)note.Pitch)];
+        if (RhythmController.instance.CurrentDifficulty.OneButtonMode)
+        {
+           // _letterDisplay.color = new Color(0, 0, 0, 0);
+        }
+        else if (RhythmController.instance.CurrentDifficulty.FourButtonMode)
+        {
+            _letterDisplay.sprite = _arrowSprite;
+            switch (((int)note.Pitch))
+            {
+                case (0):
+                case (1):
+                    _letterDisplay.transform.localRotation = Quaternion.Euler(0, 0, -90);
+                    break;
+                case (2):
+                case (3):
+                    _letterDisplay.transform.localRotation = Quaternion.Euler(0, 0, 90);
+                    break;
+                case (6):
+                    _letterDisplay.flipY = true;
+                    break;
+            }
+        }
+        else
+        {
+            _letterDisplay.sprite = _letterSprites[((int)note.Pitch)];
+        }
+            
     }
 
     /// <summary>
