@@ -1,3 +1,11 @@
+/*****************************************************************************
+// File Name : QueuedSongData.cs
+// Author : Pierce Nunnelley
+// Creation Date : April 13, 2024
+//
+// Brief Description : This ScriptableObject script acts as storage for the
+next song to be played, which is accessed by RhythmController.
+*****************************************************************************/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

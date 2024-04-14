@@ -15,7 +15,9 @@ MonoBehaviour:
   _timingWindow: 0.5
   _perfectTimingWindow: 0
   _oneButtonMode: 0
+  _fourButtonMode: 1
   _scoreMultiplier: 2
   _maxHealth: 5
   _healthRegen: 1
+  _scrollSpeed: 1
   _category: 1

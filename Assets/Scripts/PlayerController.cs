@@ -68,6 +68,10 @@ public class PlayerController : MonoBehaviour
         IsButtonTimed(IndividualNoteChart.possiblePitches.G);
     }
 
+    /// <summary>
+    /// Calls IsButtonTimed with preset values for the sake of Four Button Mode.
+    /// </summary>
+    /// <param name="iValue">value recieved from input</param>
     public void OnSimpleNotes(InputValue iValue)
     {
         Vector2 inputMovement = iValue.Get<Vector2>();
@@ -118,6 +122,9 @@ public class PlayerController : MonoBehaviour
         return false;
     }
 
+    /// <summary>
+    /// Applied effects of hitting a note and plays a sound effect.
+    /// </summary>
     public void NoteHitBehavior()
     {
         _hitSound.Play();
@@ -126,6 +133,9 @@ public class PlayerController : MonoBehaviour
         (RhythmController.instance.CurrentDifficulty.HealthRegen);
     }
 
+    /// <summary>
+    /// Applied effects of missing a note and plays a sound effect.
+    /// </summary>
     public void NoteMissBehavior()
     {
         _missSound.Play();

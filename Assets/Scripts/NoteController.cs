@@ -40,10 +40,12 @@ public class NoteController : MonoBehaviour
 
         if (RhythmController.instance.CurrentDifficulty.OneButtonMode)
         {
-           // _letterDisplay.color = new Color(0, 0, 0, 0);
+            //hide letter display if in One Button Mode
+            _letterDisplay.color = new Color(0, 0, 0, 0);
         }
         else if (RhythmController.instance.CurrentDifficulty.FourButtonMode)
         {
+            //sets letter display to arrow if in Four Button Mode
             _letterDisplay.sprite = _arrowSprite;
             switch (((int)note.Pitch))
             {
@@ -62,6 +64,7 @@ public class NoteController : MonoBehaviour
         }
         else
         {
+            //sets letter display to letter sprite
             _letterDisplay.sprite = _letterSprites[((int)note.Pitch)];
         }
             

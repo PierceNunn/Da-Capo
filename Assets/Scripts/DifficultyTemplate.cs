@@ -25,12 +25,12 @@ public class DifficultyTemplate : ScriptableObject
     [SerializeField] private float _timingWindow; //permittable time before or after note where button press counts
     [SerializeField] private float _perfectTimingWindow; //permittable time before or after note for perfect hit
     [SerializeField] private bool _oneButtonMode = false; //whether or not any button can be used
-    [SerializeField] private bool _fourButtonMode = false;
+    [SerializeField] private bool _fourButtonMode = false; //whether or not WASD/Arrow Keys are used
     [SerializeField] private float _scoreMultiplier = 1; // magnifies the score gained from playing a level
-    [SerializeField] private uint _maxHealth = 5;
-    [SerializeField] private float _healthRegen = 1;
-    [SerializeField] private float _scrollSpeed = 1;
-    [SerializeField] private scoreCategories _category;
+    [SerializeField] private uint _maxHealth = 5; //Max health player can have in a song
+    [SerializeField] private float _healthRegen = 1; //Health regenerated for every hit node
+    [SerializeField] private float _scrollSpeed = 1; //speed at which notes move across screen
+    [SerializeField] private scoreCategories _category; //which "type" of difficulty this is
 
     public float PerfectTimingWindow { get => _perfectTimingWindow; set => _perfectTimingWindow = value; }
     public float TimingWindow { get => _timingWindow; set => _timingWindow = value; }
