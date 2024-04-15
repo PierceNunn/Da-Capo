@@ -3839,7 +3839,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _nextSong: {fileID: 11400000, guid: a0101e78ee81a0a40b6449777ec0027f, type: 2}
-  _nextDifficulty: {fileID: 11400000, guid: e514f772e47c80e429bd103b17830f25, type: 2}
+  _nextDifficulty: {fileID: 11400000, guid: 3fb653cddb3f6dc4ca31570a0b9f5bd6, type: 2}
   _postSongScene: MidLevelCutscene
 --- !u!114 &1927108291
 MonoBehaviour:
@@ -3855,7 +3855,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _topScoreDisplay: {fileID: 2103391799}
   _displayedSong: {fileID: 11400000, guid: a0101e78ee81a0a40b6449777ec0027f, type: 2}
-  _scoreCategoryToDisplay: 1
+  _scoreCategoryToDisplay: 0
 --- !u!114 &1927108292
 MonoBehaviour:
   m_ObjectHideFlags: 0

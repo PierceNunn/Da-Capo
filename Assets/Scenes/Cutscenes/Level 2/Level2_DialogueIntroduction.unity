@@ -123,17 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &21358707 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7735104122235432888, guid: 2b0430938e776114c9e6677f628e0948, type: 3}
-  m_PrefabInstance: {fileID: 1020411563}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &124765820
 GameObject:
   m_ObjectHideFlags: 0
@@ -546,15 +535,15 @@ PrefabInstance:
     - target: {fileID: 3432855881200045031, guid: 2b0430938e776114c9e6677f628e0948, type: 3}
       propertyPath: _nextSong
       value: 
-      objectReference: {fileID: 11400000, guid: a0101e78ee81a0a40b6449777ec0027f, type: 2}
+      objectReference: {fileID: 11400000, guid: 2ce7bab72e4758045b3c1825c077ffc6, type: 2}
     - target: {fileID: 3432855881200045031, guid: 2b0430938e776114c9e6677f628e0948, type: 3}
       propertyPath: _postSongScene
-      value: MidLevelCutscene
+      value: Level2_DialogueOutro
       objectReference: {fileID: 0}
     - target: {fileID: 3432855881200045031, guid: 2b0430938e776114c9e6677f628e0948, type: 3}
       propertyPath: _nextDifficulty
       value: 
-      objectReference: {fileID: 11400000, guid: 3fb653cddb3f6dc4ca31570a0b9f5bd6, type: 2}
+      objectReference: {fileID: 11400000, guid: e514f772e47c80e429bd103b17830f25, type: 2}
     - target: {fileID: 5999769737311558347, guid: 2b0430938e776114c9e6677f628e0948, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -765,333 +754,66 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _characterDialogue:
-  - _portraitImage: {fileID: 21300000, guid: 2871178914819f8438af6550f2ceffd5, type: 3}
-    _characterName: ' f'
-    _characterVoice: {fileID: 11400000, guid: 49f13d9ffda165848bc4eefc70d33489, type: 2}
-    _jitterText: 0
-    sentences: ...Hello?
-    _eventsToInvoke: []
-  - _portraitImage: {fileID: 21300000, guid: aa7650bd263c3a849a6b950ae01689ce, type: 3}
-    _characterName: Cadenza
-    _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
-    _jitterText: 0
-    sentences: Ah! Welcome + [USER_13345323] + !
-    _eventsToInvoke: []
   - _portraitImage: {fileID: 21300000, guid: 7146e1fb86492de43aa03a79d86fd014, type: 3}
     _characterName: 
     _characterVoice: {fileID: 11400000, guid: 49f13d9ffda165848bc4eefc70d33489, type: 2}
     _jitterText: 0
-    sentences: Oh, there you are.
+    sentences: Okay, I am ready for the next lesson!
     _eventsToInvoke: []
   - _portraitImage: {fileID: 21300000, guid: aa7650bd263c3a849a6b950ae01689ce, type: 3}
     _characterName: Cadenza
     _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
     _jitterText: 0
-    sentences: Hmm, it doesn't look like you have a name attached to your ID. that's
-      odd.
-    _eventsToInvoke: []
-  - _portraitImage: {fileID: 21300000, guid: 7146e1fb86492de43aa03a79d86fd014, type: 3}
-    _characterName: ' '
-    _characterVoice: {fileID: 11400000, guid: 49f13d9ffda165848bc4eefc70d33489, type: 2}
-    _jitterText: 0
-    sentences: I guess that would make sense. I was not assigned any sort of name.
-    _eventsToInvoke: []
-  - _portraitImage: {fileID: 21300000, guid: aa7650bd263c3a849a6b950ae01689ce, type: 3}
-    _characterName: Cadenza
-    _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
-    _jitterText: 0
-    sentences: Oh? Could it be--?
-    _eventsToInvoke: []
-  - _portraitImage: {fileID: 21300000, guid: aa7650bd263c3a849a6b950ae01689ce, type: 3}
-    _characterName: Cadenza
-    _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
-    _jitterText: 0
-    sentences: It appears so! You're not a user at all!
-    _eventsToInvoke: []
-  - _portraitImage: {fileID: 21300000, guid: 7146e1fb86492de43aa03a79d86fd014, type: 3}
-    _characterName: ' '
-    _characterVoice: {fileID: 11400000, guid: 49f13d9ffda165848bc4eefc70d33489, type: 2}
-    _jitterText: 0
-    sentences: Well, I am hoping to utilize your services regardless.
-    _eventsToInvoke: []
-  - _portraitImage: {fileID: 21300000, guid: 2871178914819f8438af6550f2ceffd5, type: 3}
-    _characterName: ' '
-    _characterVoice: {fileID: 11400000, guid: 49f13d9ffda165848bc4eefc70d33489, type: 2}
-    _jitterText: 0
-    sentences: My hypothesis is that learning the art of music will enable me to
-      communicate more fluently with my operators.
-    _eventsToInvoke: []
-  - _portraitImage: {fileID: 21300000, guid: 2871178914819f8438af6550f2ceffd5, type: 3}
-    _characterName: ' '
-    _characterVoice: {fileID: 11400000, guid: 49f13d9ffda165848bc4eefc70d33489, type: 2}
-    _jitterText: 0
-    sentences: Music is the "universal language", correct?
-    _eventsToInvoke: []
-  - _portraitImage: {fileID: 21300000, guid: aa7650bd263c3a849a6b950ae01689ce, type: 3}
-    _characterName: Cadenza
-    _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
-    _jitterText: 0
-    sentences: Ohhh, struggling that much, huh?
-    _eventsToInvoke: []
-  - _portraitImage: {fileID: 21300000, guid: aa7650bd263c3a849a6b950ae01689ce, type: 3}
-    _characterName: Cadenza
-    _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
-    _jitterText: 0
-    sentences: Well, I dunno how much it'll help, but music is my forte!
-    _eventsToInvoke: []
-  - _portraitImage: {fileID: 21300000, guid: aa7650bd263c3a849a6b950ae01689ce, type: 3}
-    _characterName: Cadenza
-    _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
-    _jitterText: 0
-    sentences: My FORTE!!!!! if you will.
-    _eventsToInvoke: []
-  - _portraitImage: {fileID: 21300000, guid: aa7650bd263c3a849a6b950ae01689ce, type: 3}
-    _characterName: Cadenza
-    _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
-    _jitterText: 0
-    sentences: Get it? Music joke?
+    sentences: Okie dokie! Next song coming up!
     _eventsToInvoke: []
   - _portraitImage: {fileID: 21300000, guid: 3a22180e6767704428bfdd533e19392a, type: 3}
     _characterName: ' '
     _characterVoice: {fileID: 11400000, guid: 49f13d9ffda165848bc4eefc70d33489, type: 2}
     _jitterText: 0
-    sentences: ...?
+    sentences: Wait, are you not going to give me a lesson?
     _eventsToInvoke: []
   - _portraitImage: {fileID: 21300000, guid: 9c4f75ecf9ff7db4c9730b5d252520ca, type: 3}
     _characterName: Cadenza
     _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
     _jitterText: 0
-    sentences: ...
+    sentences: Oh yeah. uhhh... this dialogue isn't fully fleshed out yet...
     _eventsToInvoke: []
-  - _portraitImage: {fileID: 21300000, guid: 9c4f75ecf9ff7db4c9730b5d252520ca, type: 3}
-    _characterName: Cadenza
-    _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
-    _jitterText: 0
-    sentences: Let's uh. Let's just get started.
-    _eventsToInvoke: []
-  - _portraitImage: {fileID: 21300000, guid: aa7650bd263c3a849a6b950ae01689ce, type: 3}
-    _characterName: Cadenza
-    _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
-    _jitterText: 0
-    sentences: Behold!
-    _eventsToInvoke:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 124765821}
-          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-          m_MethodName: Play
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1234422003}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-  - _portraitImage: {fileID: 21300000, guid: 7146e1fb86492de43aa03a79d86fd014, type: 3}
-    _characterName: ' '
-    _characterVoice: {fileID: 11400000, guid: 49f13d9ffda165848bc4eefc70d33489, type: 2}
-    _jitterText: 0
-    sentences: Oh, wow!
-    _eventsToInvoke: []
-  - _portraitImage: {fileID: 21300000, guid: 3a22180e6767704428bfdd533e19392a, type: 3}
-    _characterName: ' '
-    _characterVoice: {fileID: 11400000, guid: 49f13d9ffda165848bc4eefc70d33489, type: 2}
-    _jitterText: 0
-    sentences: It is, uh. It is lines.
-    _eventsToInvoke: []
-  - _portraitImage: {fileID: 21300000, guid: aa7650bd263c3a849a6b950ae01689ce, type: 3}
-    _characterName: Cadenza
-    _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
-    _jitterText: 0
-    sentences: Not just any lines!
-    _eventsToInvoke: []
-  - _portraitImage: {fileID: 21300000, guid: aa7650bd263c3a849a6b950ae01689ce, type: 3}
-    _characterName: Cadenza
-    _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
-    _jitterText: 0
-    sentences: Welcome to  T H E  S T A F F .
-    _eventsToInvoke: []
-  - _portraitImage: {fileID: 21300000, guid: aa7650bd263c3a849a6b950ae01689ce, type: 3}
-    _characterName: Cadenza
-    _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
-    _jitterText: 0
-    sentences: These five lines and four spaces may appear simple, but they form
-      the backbone of musical notation!
-    _eventsToInvoke: []
-  - _portraitImage: {fileID: 21300000, guid: aa7650bd263c3a849a6b950ae01689ce, type: 3}
-    _characterName: Cadenza
-    _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
-    _jitterText: 0
-    sentences: The position of a note on the staff indicates its 'pitch'.
-    _eventsToInvoke: []
-  - _portraitImage: {fileID: 21300000, guid: aa7650bd263c3a849a6b950ae01689ce, type: 3}
-    _characterName: Cadenza
-    _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
-    _jitterText: 0
-    sentences: Pitch is represented by letters, specifically A-G.
-    _eventsToInvoke:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 377153233}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 21358707}
-          m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-          m_MethodName: set_enabled
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - _portraitImage: {fileID: 21300000, guid: aa7650bd263c3a849a6b950ae01689ce, type: 3}
-    _characterName: Cadenza
-    _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
-    _jitterText: 0
-    sentences: The spaces on the staff are represented by the letters F-A-C-E, which
-      is fairly easy to remember.
-    _eventsToInvoke: []
-  - _portraitImage: {fileID: 21300000, guid: aa7650bd263c3a849a6b950ae01689ce, type: 3}
-    _characterName: Cadenza
-    _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
-    _jitterText: 0
-    sentences: The lines' letters spell out E-G-B-D. Harder to remember, yes, but
-      not impossible!
-    _eventsToInvoke:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 377153233}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 2122278222}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-  - _portraitImage: {fileID: 21300000, guid: aa7650bd263c3a849a6b950ae01689ce, type: 3}
-    _characterName: Cadenza
-    _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
-    _jitterText: 0
-    sentences: Try and remember these, because I'm about to put you to the test!
-    _eventsToInvoke:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 377153233}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
   - _portraitImage: {fileID: 21300000, guid: 2871178914819f8438af6550f2ceffd5, type: 3}
     _characterName: ' '
     _characterVoice: {fileID: 11400000, guid: 49f13d9ffda165848bc4eefc70d33489, type: 2}
     _jitterText: 0
-    sentences: Pardon, "test"?
-    _eventsToInvoke:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 21358707}
-          m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-          m_MethodName: set_enabled
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-  - _portraitImage: {fileID: 21300000, guid: aa7650bd263c3a849a6b950ae01689ce, type: 3}
-    _characterName: Cadenza
-    _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
-    _jitterText: 0
-    sentences: Well, we gotta make sure you understand, right?
+    sentences: Oh...
     _eventsToInvoke: []
   - _portraitImage: {fileID: 21300000, guid: aa7650bd263c3a849a6b950ae01689ce, type: 3}
     _characterName: Cadenza
     _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
     _jitterText: 0
-    sentences: Let's start simple.
+    sentences: But uh! You'll be seeing some new notes here! Like the H A L F  N
+      O T E !
     _eventsToInvoke: []
   - _portraitImage: {fileID: 21300000, guid: aa7650bd263c3a849a6b950ae01689ce, type: 3}
     _characterName: Cadenza
     _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
     _jitterText: 0
-    sentences: Just press the C button for each note on the keyboard as it enters
-      the YELLOW ZONE.
+    sentences: Fun fact, it's longer than the quarter note!
     _eventsToInvoke: []
-  - _portraitImage: {fileID: 21300000, guid: aa7650bd263c3a849a6b950ae01689ce, type: 3}
-    _characterName: Cadenza
-    _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
+  - _portraitImage: {fileID: 21300000, guid: 7146e1fb86492de43aa03a79d86fd014, type: 3}
+    _characterName: ' '
+    _characterVoice: {fileID: 11400000, guid: 49f13d9ffda165848bc4eefc70d33489, type: 2}
     _jitterText: 0
-    sentences: Oh, but DON'T press the button for RESTS, okay? Just NOTES.
+    sentences: Oh!
     _eventsToInvoke: []
-  - _portraitImage: {fileID: 21300000, guid: aa7650bd263c3a849a6b950ae01689ce, type: 3}
-    _characterName: Cadenza
-    _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
+  - _portraitImage: {fileID: 21300000, guid: 7146e1fb86492de43aa03a79d86fd014, type: 3}
+    _characterName: ' '
+    _characterVoice: {fileID: 11400000, guid: 49f13d9ffda165848bc4eefc70d33489, type: 2}
     _jitterText: 0
-    sentences: It's basically just a rhythm game. You'll be fine!
+    sentences: Okay, let's do this!
     _eventsToInvoke: []
-  - _portraitImage: {fileID: 21300000, guid: aa7650bd263c3a849a6b950ae01689ce, type: 3}
-    _characterName: Cadenza
-    _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
+  - _portraitImage: {fileID: 21300000, guid: 7146e1fb86492de43aa03a79d86fd014, type: 3}
+    _characterName: ' '
+    _characterVoice: {fileID: 11400000, guid: 49f13d9ffda165848bc4eefc70d33489, type: 2}
     _jitterText: 0
-    sentences: Good luck!
-    _eventsToInvoke: []
-  - _portraitImage: {fileID: 21300000, guid: aa7650bd263c3a849a6b950ae01689ce, type: 3}
-    _characterName: Cadenza
-    _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
-    _jitterText: 0
-    sentences: ' '
+    sentences: Okay, let's do this!
     _eventsToInvoke:
     - m_PersistentCalls:
         m_Calls:
