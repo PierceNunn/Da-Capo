@@ -272,9 +272,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ac853edc0ed53a42b8883ebd2ed4b8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nextSong: {fileID: 11400000, guid: a0101e78ee81a0a40b6449777ec0027f, type: 2}
+  _nextSong: {fileID: 11400000, guid: 44d47da985245104ba6b28776e7622e9, type: 2}
   _nextDifficulty: {fileID: 11400000, guid: e514f772e47c80e429bd103b17830f25, type: 2}
-  _postSongScene: MidLevelCutscene
+  _postSongScene: Level3_DialogueOutro
 --- !u!114 &284363737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2987,7 +2987,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1576022598}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 75bbdef312f2bae4a9368ec39c3076a3, type: 3}
   m_Name: 
@@ -3048,7 +3048,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: DialogueIntroduction
+          m_StringArgument: Level2_DialogueIntroduction
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1576022603
@@ -3215,7 +3215,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: DialogueIntroduction
+          m_StringArgument: Level3_DialogueIntroduction
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1649227928
@@ -4005,9 +4005,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ac853edc0ed53a42b8883ebd2ed4b8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nextSong: {fileID: 11400000, guid: a0101e78ee81a0a40b6449777ec0027f, type: 2}
+  _nextSong: {fileID: 11400000, guid: 2ce7bab72e4758045b3c1825c077ffc6, type: 2}
   _nextDifficulty: {fileID: 11400000, guid: e514f772e47c80e429bd103b17830f25, type: 2}
-  _postSongScene: MidLevelCutscene
+  _postSongScene: Level2_DialogueOutro
 --- !u!114 &1987280184
 MonoBehaviour:
   m_ObjectHideFlags: 0
