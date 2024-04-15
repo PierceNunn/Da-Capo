@@ -8,6 +8,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealthManager : MonoBehaviour
 {
@@ -32,6 +33,11 @@ public class PlayerHealthManager : MonoBehaviour
     public void loseHealth(uint quantity)
     {
         currentHealth = (currentHealth - quantity <= 0) ? 0.1f : currentHealth - quantity;
+        if(currentHealth <= 0.1f)
+        {
+            string currentSceneName = SceneManager.GetActiveScene().name;
+            SceneManager.LoadScene(currentSceneName);
+        }
     }
 
     /// <summary>

@@ -2947,7 +2947,7 @@ GameObject:
   - component: {fileID: 1332299352}
   - component: {fileID: 1332299351}
   m_Layer: 5
-  m_Name: Image
+  m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2970,7 +2970,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -320.57, y: -159}
+  m_AnchoredPosition: {x: -320.57, y: -184}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1332299351
@@ -4326,7 +4326,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 549828f13a9d352468b156ed90d970b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _loadFromQueuedSong: 0
+  _loadFromQueuedSong: 1
   beatsPerLoop: 4
   _currentDifficulty: {fileID: 11400000, guid: fa5245fc481ebb44089e7854ff47a195, type: 2}
   _currentSong: {fileID: 11400000, guid: 2ce7bab72e4758045b3c1825c077ffc6, type: 2}
