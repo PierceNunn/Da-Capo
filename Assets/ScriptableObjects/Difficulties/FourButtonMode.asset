@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91afa085029231b4e88bd9dd53f5549c, type: 3}
   m_Name: FourButtonMode
   m_EditorClassIdentifier: 
-  _timingWindow: 0.5
-  _perfectTimingWindow: 0
+  _timingWindow: 0.75
+  _perfectTimingWindow: 0.5
   _oneButtonMode: 0
   _fourButtonMode: 1
   _scoreMultiplier: 2
