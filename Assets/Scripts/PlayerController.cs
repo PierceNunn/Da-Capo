@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private AudioSource _hitSound;
     [SerializeField] private AudioSource _missSound;
+    [SerializeField] private GameObject _hitParticle;
 
     /// <summary>
     /// Calls IsButtonTimed with the pitch of A.
@@ -127,6 +128,7 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     public void NoteHitBehavior()
     {
+        
         _hitSound.Play();
         FindObjectOfType<PointsHandler>().NoteHitPoints();
         FindObjectOfType<PlayerHealthManager>().gainHealth
@@ -158,6 +160,8 @@ public class PlayerController : MonoBehaviour
             actualTime > timeToCheck - RhythmController.instance.CurrentDifficulty.TimingWindow &&
             (pitch == targetNote.Pitch || RhythmController.instance.CurrentDifficulty.OneButtonMode))
         {
+            Vector3 particlePos = new Vector3(timeToCheck - actualTime, transform.position.y, transform.position.z);
+            Instantiate(_hitParticle, particlePos, Quaternion.identity);
             return true;
         }
         return false;
