@@ -555,6 +555,10 @@ PrefabInstance:
       propertyPath: _nextDifficulty
       value: 
       objectReference: {fileID: 11400000, guid: 3fb653cddb3f6dc4ca31570a0b9f5bd6, type: 2}
+    - target: {fileID: 4960954780625975123, guid: 2b0430938e776114c9e6677f628e0948, type: 3}
+      propertyPath: _chatSpeed
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 5999769737311558347, guid: 2b0430938e776114c9e6677f628e0948, type: 3}
       propertyPath: m_Pivot.x
       value: 0

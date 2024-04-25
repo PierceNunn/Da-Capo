@@ -4612,7 +4612,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 549828f13a9d352468b156ed90d970b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _loadFromQueuedSong: 0
+  _loadFromQueuedSong: 1
   beatsPerLoop: 4
   _currentDifficulty: {fileID: 11400000, guid: 3fb653cddb3f6dc4ca31570a0b9f5bd6, type: 2}
   _currentSong: {fileID: 11400000, guid: 44d47da985245104ba6b28776e7622e9, type: 2}
