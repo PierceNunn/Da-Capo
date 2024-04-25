@@ -539,6 +539,8 @@ MonoBehaviour:
   _autoAdvance: 0
   _buttonSound: {fileID: 3935990885939987465}
   _buttonPrompt: {fileID: 1031772053788743794}
+  _blackScreen: {fileID: 3769456247894921845}
+  _sceneLoader: {fileID: 3432855881200045031}
 --- !u!82 &3880008010062572102
 AudioSource:
   m_ObjectHideFlags: 0

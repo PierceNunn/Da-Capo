@@ -29,6 +29,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private bool _autoAdvance = false;
     [SerializeField] private GameObject _buttonSound;
     [SerializeField] private Image _buttonPrompt;
+    [SerializeField] private Image _blackScreen;
+    [SerializeField] private SceneLoader _sceneLoader;
     private GameObject currentRef;
     private bool isOpen = false;
     private bool isTyping = false;
