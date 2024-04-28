@@ -1959,7 +1959,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -4730,7 +4730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 549828f13a9d352468b156ed90d970b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _loadFromQueuedSong: 0
+  _loadFromQueuedSong: 1
   beatsPerLoop: 4
   _currentDifficulty: {fileID: 11400000, guid: 3fb653cddb3f6dc4ca31570a0b9f5bd6, type: 2}
   _currentSong: {fileID: 11400000, guid: 44d47da985245104ba6b28776e7622e9, type: 2}

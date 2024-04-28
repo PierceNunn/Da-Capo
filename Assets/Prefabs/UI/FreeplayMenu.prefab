@@ -341,7 +341,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _nextSong: {fileID: 11400000, guid: 44d47da985245104ba6b28776e7622e9, type: 2}
   _nextDifficulty: {fileID: 11400000, guid: fa5245fc481ebb44089e7854ff47a195, type: 2}
-  _postSongScene: Freeplay
+  _postSongScene: MainMenu
 --- !u!1 &332044151711628842
 GameObject:
   m_ObjectHideFlags: 0
@@ -508,7 +508,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _nextSong: {fileID: 11400000, guid: 2ce7bab72e4758045b3c1825c077ffc6, type: 2}
   _nextDifficulty: {fileID: 11400000, guid: f0ea98b334d4b9a40bfe0d49334077a9, type: 2}
-  _postSongScene: Freeplay
+  _postSongScene: MainMenu
 --- !u!1 &384549143434145587
 GameObject:
   m_ObjectHideFlags: 0
@@ -1288,8 +1288,8 @@ RectTransform:
   m_Father: {fileID: 222826526696633235}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.000000059604645, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1769,7 +1769,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _nextSong: {fileID: 11400000, guid: 2ce7bab72e4758045b3c1825c077ffc6, type: 2}
   _nextDifficulty: {fileID: 11400000, guid: e514f772e47c80e429bd103b17830f25, type: 2}
-  _postSongScene: Freeplay
+  _postSongScene: MainMenu
 --- !u!1 &2935320481693539177
 GameObject:
   m_ObjectHideFlags: 0
@@ -2136,7 +2136,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4187459313472019883
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2952,7 +2952,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _nextSong: {fileID: 11400000, guid: 2ce7bab72e4758045b3c1825c077ffc6, type: 2}
   _nextDifficulty: {fileID: 11400000, guid: fa5245fc481ebb44089e7854ff47a195, type: 2}
-  _postSongScene: Freeplay
+  _postSongScene: MainMenu
 --- !u!1 &5609532729795545857
 GameObject:
   m_ObjectHideFlags: 0
@@ -2990,7 +2990,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.0000044107437, y: 141.16043}
+  m_AnchoredPosition: {x: 0.0000044107437, y: 288.29007}
   m_SizeDelta: {x: 0, y: 638.39}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &5703832720364862230
@@ -3403,7 +3403,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _nextSong: {fileID: 11400000, guid: 44d47da985245104ba6b28776e7622e9, type: 2}
   _nextDifficulty: {fileID: 11400000, guid: e514f772e47c80e429bd103b17830f25, type: 2}
-  _postSongScene: Freeplay
+  _postSongScene: MainMenu
 --- !u!1 &5966660345015253691
 GameObject:
   m_ObjectHideFlags: 0
@@ -3705,7 +3705,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _nextSong: {fileID: 11400000, guid: 44d47da985245104ba6b28776e7622e9, type: 2}
   _nextDifficulty: {fileID: 11400000, guid: f0ea98b334d4b9a40bfe0d49334077a9, type: 2}
-  _postSongScene: Freeplay
+  _postSongScene: MainMenu
 --- !u!1 &6513116111951926451
 GameObject:
   m_ObjectHideFlags: 0
@@ -3974,8 +3974,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2681241152872765921}
   m_HandleRect: {fileID: 5940579016914619216}
   m_Direction: 2
-  m_Value: 0.4796694
-  m_Size: 0.57504034
+  m_Value: -0.00000031757165
+  m_Size: 0.54841083
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4801,7 +4801,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _nextSong: {fileID: 11400000, guid: a0101e78ee81a0a40b6449777ec0027f, type: 2}
   _nextDifficulty: {fileID: 11400000, guid: fa5245fc481ebb44089e7854ff47a195, type: 2}
-  _postSongScene: Freeplay
+  _postSongScene: MainMenu
 --- !u!1 &8430858300345775751
 GameObject:
   m_ObjectHideFlags: 0
@@ -4968,7 +4968,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _nextSong: {fileID: 11400000, guid: a0101e78ee81a0a40b6449777ec0027f, type: 2}
   _nextDifficulty: {fileID: 11400000, guid: e514f772e47c80e429bd103b17830f25, type: 2}
-  _postSongScene: Freeplay
+  _postSongScene: MainMenu
 --- !u!1 &8607433696752693628
 GameObject:
   m_ObjectHideFlags: 0
