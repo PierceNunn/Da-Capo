@@ -82,6 +82,7 @@ public class RhythmController : MonoBehaviour
         measureTimeInBeats = BeatsPerLoop * secsPerBeat;
         dspSongTime = AudioSettings.dspTime + 0.5;
         musicSource.PlayScheduled(dspSongTime);
+        musicSource.volume = PlayerPrefs.GetFloat("musicVolume", 0.5f);
         _noteDisplayer.InstantiateNotes();
         songBegun = true;
     }

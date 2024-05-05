@@ -17,6 +17,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject _hitParticle;
 
     /// <summary>
+    /// Sets volume of SFX according to PlayerPrefs.
+    /// </summary>
+    public void Start()
+    {
+        _hitSound.volume = PlayerPrefs.GetFloat("SFXVolume", 0.5f);
+        _missSound.volume = PlayerPrefs.GetFloat("SFXVolume", 0.5f);
+    }
+
+    /// <summary>
     /// Calls IsButtonTimed with the pitch of A.
     /// </summary>
     public void OnNoteA()

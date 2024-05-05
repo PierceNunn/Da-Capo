@@ -40,11 +40,15 @@ public class DialogueManager : MonoBehaviour
     public bool IsOpen { get => isOpen; set => isOpen = value; }
 
     /// <summary>
-    /// sets each queue as a new empty queue.
+    /// sets each queue as a new empty queue, and sets volume of audio sources.
     /// </summary>
     void Start()
     {
         dialogues = new Queue<SingleDialogue>();
+        //set vol of audio sources
+        _voicer.volume = PlayerPrefs.GetFloat("SFXVolume", 0.5f);
+        _buttonSound.GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("SFXVolume", 0.5f);
+        
     }
 
     /// <summary>

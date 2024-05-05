@@ -22,7 +22,7 @@ public class SettingsMenuManager : MonoBehaviour
     [SerializeField] private AudioSource _exampleSFX;
 
     /// <summary>
-    /// Sets the status of the menu options to match the saved preferences.
+    /// Sets the status of the menu options to match the saved preferences, as well as audio volume.
     /// </summary>
     private void Start()
     {
@@ -30,6 +30,9 @@ public class SettingsMenuManager : MonoBehaviour
         _oneButtonToggle.isOn = PlayerPrefs.GetInt("oneButtonMode", 0) == 1;
         _musicSlider.value = PlayerPrefs.GetFloat("musicVolume", 0.5f);
         _sfxSlider.value = PlayerPrefs.GetFloat("SFXVolume", 0.5f);
+
+        _exampleMusic.volume = PlayerPrefs.GetFloat("musicVolume", 0.5f);
+        _exampleSFX.volume = PlayerPrefs.GetFloat("SFXVolume", 0.5f);
     }
 
     /// <summary>
