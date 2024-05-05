@@ -754,49 +754,97 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _characterDialogue:
-  - _portraitImage: {fileID: 21300000, guid: 9c4f75ecf9ff7db4c9730b5d252520ca, type: 3}
-    _characterName: Cadenza
-    _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
-    _jitterText: 0
-    sentences: Okay, uh. this song is HARD.
-    _eventsToInvoke: []
   - _portraitImage: {fileID: 21300000, guid: 7146e1fb86492de43aa03a79d86fd014, type: 3}
     _characterName: ' '
     _characterVoice: {fileID: 11400000, guid: 49f13d9ffda165848bc4eefc70d33489, type: 2}
     _jitterText: 0
-    sentences: Okay, that is fine!
+    sentences: So, uh... this is our last lesson, then?
     _eventsToInvoke: []
-  - _portraitImage: {fileID: 21300000, guid: 9c4f75ecf9ff7db4c9730b5d252520ca, type: 3}
+  - _portraitImage: {fileID: 21300000, guid: aa7650bd263c3a849a6b950ae01689ce, type: 3}
     _characterName: Cadenza
     _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
-    _jitterText: 1
-    sentences: No, like.
+    _jitterText: 0
+    sentences: ...yeah...
     _eventsToInvoke: []
-  - _portraitImage: {fileID: 21300000, guid: 9c4f75ecf9ff7db4c9730b5d252520ca, type: 3}
-    _characterName: Cadenza
-    _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
-    _jitterText: 1
-    sentences: This song is incredibly unfair and will probably be modified for the
-      final release
-    _eventsToInvoke: []
-  - _portraitImage: {fileID: 21300000, guid: 9c4f75ecf9ff7db4c9730b5d252520ca, type: 3}
-    _characterName: Cadenza
-    _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
-    _jitterText: 1
-    sentences: I would recommend trying 4-button mode from Freeplay if you can't
-      beat it
-    _eventsToInvoke: []
-  - _portraitImage: {fileID: 21300000, guid: 7146e1fb86492de43aa03a79d86fd014, type: 3}
+  - _portraitImage: {fileID: 21300000, guid: 2871178914819f8438af6550f2ceffd5, type: 3}
     _characterName: ' '
     _characterVoice: {fileID: 11400000, guid: 49f13d9ffda165848bc4eefc70d33489, type: 2}
     _jitterText: 0
-    sentences: Oh
+    sentences: why did you say it like that
     _eventsToInvoke: []
-  - _portraitImage: {fileID: 21300000, guid: 7146e1fb86492de43aa03a79d86fd014, type: 3}
+  - _portraitImage: {fileID: 21300000, guid: 9c4f75ecf9ff7db4c9730b5d252520ca, type: 3}
+    _characterName: Cadenza
+    _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
+    _jitterText: 0
+    sentences: uhhhhhhhh no reason
+    _eventsToInvoke: []
+  - _portraitImage: {fileID: 21300000, guid: 9c4f75ecf9ff7db4c9730b5d252520ca, type: 3}
+    _characterName: Cadenza
+    _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
+    _jitterText: 0
+    sentences: anyways
+    _eventsToInvoke: []
+  - _portraitImage: {fileID: 21300000, guid: 9c4f75ecf9ff7db4c9730b5d252520ca, type: 3}
+    _characterName: Cadenza
+    _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
+    _jitterText: 0
+    sentences: i figured for our last time together i should make the test a... little
+      more difficult...
+    _eventsToInvoke: []
+  - _portraitImage: {fileID: 21300000, guid: 3a22180e6767704428bfdd533e19392a, type: 3}
     _characterName: ' '
     _characterVoice: {fileID: 11400000, guid: 49f13d9ffda165848bc4eefc70d33489, type: 2}
     _jitterText: 0
-    sentences: Uh. noted
+    sentences: uh oh
+    _eventsToInvoke: []
+  - _portraitImage: {fileID: 21300000, guid: aa7650bd263c3a849a6b950ae01689ce, type: 3}
+    _characterName: Cadenza
+    _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
+    _jitterText: 0
+    sentences: soooooooooo let's talk eighth notes!
+    _eventsToInvoke: []
+  - _portraitImage: {fileID: 21300000, guid: aa7650bd263c3a849a6b950ae01689ce, type: 3}
+    _characterName: Cadenza
+    _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
+    _jitterText: 0
+    sentences: eighth notes, unsurprisingly, are one eighth the length of a measure.
+    _eventsToInvoke: []
+  - _portraitImage: {fileID: 21300000, guid: aa7650bd263c3a849a6b950ae01689ce, type: 3}
+    _characterName: Cadenza
+    _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
+    _jitterText: 0
+    sentences: since they're half the length of quarter notes, naturally, twice as
+      many can be used in the same timeframe.
+    _eventsToInvoke: []
+  - _portraitImage: {fileID: 21300000, guid: 2871178914819f8438af6550f2ceffd5, type: 3}
+    _characterName: 
+    _characterVoice: {fileID: 11400000, guid: 49f13d9ffda165848bc4eefc70d33489, type: 2}
+    _jitterText: 0
+    sentences: ... you put a bunch of eighth notes into the final song didn't you.
+    _eventsToInvoke: []
+  - _portraitImage: {fileID: 21300000, guid: 9c4f75ecf9ff7db4c9730b5d252520ca, type: 3}
+    _characterName: Cadenza
+    _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
+    _jitterText: 0
+    sentences: the entire latter two thirds of the song are exclusively eighth notes.
+    _eventsToInvoke: []
+  - _portraitImage: {fileID: 21300000, guid: 2871178914819f8438af6550f2ceffd5, type: 3}
+    _characterName: ' '
+    _characterVoice: {fileID: 11400000, guid: 49f13d9ffda165848bc4eefc70d33489, type: 2}
+    _jitterText: 0
+    sentences: ...
+    _eventsToInvoke: []
+  - _portraitImage: {fileID: 21300000, guid: 9c4f75ecf9ff7db4c9730b5d252520ca, type: 3}
+    _characterName: Cadenza
+    _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
+    _jitterText: 0
+    sentences: oh and it uses the entire scale.
+    _eventsToInvoke: []
+  - _portraitImage: {fileID: 21300000, guid: 9c4f75ecf9ff7db4c9730b5d252520ca, type: 3}
+    _characterName: Cadenza
+    _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
+    _jitterText: 0
+    sentences: if you can beat this you can beat anything. good luck!
     _eventsToInvoke: []
   - _portraitImage: {fileID: 21300000, guid: 7146e1fb86492de43aa03a79d86fd014, type: 3}
     _characterName: ' '
@@ -948,6 +996,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1763172167}
   - component: {fileID: 1763172166}
+  - component: {fileID: 1763172168}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -1032,6 +1081,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &1763172168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1763172165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &2075082052
 GameObject:
   m_ObjectHideFlags: 0

@@ -754,60 +754,83 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _characterDialogue:
-  - _portraitImage: {fileID: 21300000, guid: 7146e1fb86492de43aa03a79d86fd014, type: 3}
-    _characterName: 
-    _characterVoice: {fileID: 11400000, guid: 49f13d9ffda165848bc4eefc70d33489, type: 2}
+  - _portraitImage: {fileID: 21300000, guid: aa7650bd263c3a849a6b950ae01689ce, type: 3}
+    _characterName: Cadenza
+    _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
     _jitterText: 0
-    sentences: Okay, I am ready for the next lesson!
+    sentences: Alright, now let's take a look at note lengths real quick.
     _eventsToInvoke: []
   - _portraitImage: {fileID: 21300000, guid: aa7650bd263c3a849a6b950ae01689ce, type: 3}
     _characterName: Cadenza
     _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
     _jitterText: 0
-    sentences: Okie dokie! Next song coming up!
+    sentences: That first song we did together was made exclusively out of quarter
+      notes.
+    _eventsToInvoke: []
+  - _portraitImage: {fileID: 21300000, guid: aa7650bd263c3a849a6b950ae01689ce, type: 3}
+    _characterName: Cadenza
+    _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
+    _jitterText: 0
+    sentences: (Well, excluding rests).
+    _eventsToInvoke: []
+  - _portraitImage: {fileID: 21300000, guid: aa7650bd263c3a849a6b950ae01689ce, type: 3}
+    _characterName: Cadenza
+    _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
+    _jitterText: 0
+    sentences: A quarter note, as its name suggests, lasts for a quarter of a measure.
     _eventsToInvoke: []
   - _portraitImage: {fileID: 21300000, guid: 3a22180e6767704428bfdd533e19392a, type: 3}
     _characterName: ' '
     _characterVoice: {fileID: 11400000, guid: 49f13d9ffda165848bc4eefc70d33489, type: 2}
     _jitterText: 0
-    sentences: Wait, are you not going to give me a lesson?
+    sentences: Pardon, but what exactly is a measure in this context?
+    _eventsToInvoke: []
+  - _portraitImage: {fileID: 21300000, guid: aa7650bd263c3a849a6b950ae01689ce, type: 3}
+    _characterName: Cadenza
+    _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
+    _jitterText: 0
+    sentences: Oh, it's basically, like, a standardized way to split music up into
+      little chunks.
     _eventsToInvoke: []
   - _portraitImage: {fileID: 21300000, guid: 9c4f75ecf9ff7db4c9730b5d252520ca, type: 3}
     _characterName: Cadenza
     _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
     _jitterText: 0
-    sentences: Oh yeah. uhhh... this dialogue isn't fully fleshed out yet...
-    _eventsToInvoke: []
-  - _portraitImage: {fileID: 21300000, guid: 2871178914819f8438af6550f2ceffd5, type: 3}
-    _characterName: ' '
-    _characterVoice: {fileID: 11400000, guid: 49f13d9ffda165848bc4eefc70d33489, type: 2}
-    _jitterText: 0
-    sentences: Oh...
+    sentences: ...That's a gross oversimplification, but the purpose of measures
+      isn't what we should be focusing on right now...
     _eventsToInvoke: []
   - _portraitImage: {fileID: 21300000, guid: aa7650bd263c3a849a6b950ae01689ce, type: 3}
     _characterName: Cadenza
     _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
     _jitterText: 0
-    sentences: But uh! You'll be seeing some new notes here! Like the H A L F  N
-      O T E !
+    sentences: Just know for now that we typically identify a note's length relative
+      to the length of a measure.
+    _eventsToInvoke: []
+  - _portraitImage: {fileID: 21300000, guid: 7146e1fb86492de43aa03a79d86fd014, type: 3}
+    _characterName: ' '
+    _characterVoice: {fileID: 11400000, guid: 49f13d9ffda165848bc4eefc70d33489, type: 2}
+    _jitterText: 0
+    sentences: Understood!
     _eventsToInvoke: []
   - _portraitImage: {fileID: 21300000, guid: aa7650bd263c3a849a6b950ae01689ce, type: 3}
     _characterName: Cadenza
     _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
     _jitterText: 0
-    sentences: Fun fact, it's longer than the quarter note!
+    sentences: Now, going off that, it may not come as a surprise that half notes
+      are...
     _eventsToInvoke: []
-  - _portraitImage: {fileID: 21300000, guid: 7146e1fb86492de43aa03a79d86fd014, type: 3}
-    _characterName: ' '
-    _characterVoice: {fileID: 11400000, guid: 49f13d9ffda165848bc4eefc70d33489, type: 2}
+  - _portraitImage: {fileID: 21300000, guid: 9c4f75ecf9ff7db4c9730b5d252520ca, type: 3}
+    _characterName: Cadenza
+    _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
     _jitterText: 0
-    sentences: Oh!
+    sentences: gasp... half of a measure!
     _eventsToInvoke: []
-  - _portraitImage: {fileID: 21300000, guid: 7146e1fb86492de43aa03a79d86fd014, type: 3}
-    _characterName: ' '
-    _characterVoice: {fileID: 11400000, guid: 49f13d9ffda165848bc4eefc70d33489, type: 2}
+  - _portraitImage: {fileID: 21300000, guid: aa7650bd263c3a849a6b950ae01689ce, type: 3}
+    _characterName: Cadenza
+    _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
     _jitterText: 0
-    sentences: Okay, let's do this!
+    sentences: I've got a song here with half notes ready to play. Let's give it
+      a shot!
     _eventsToInvoke: []
   - _portraitImage: {fileID: 21300000, guid: 7146e1fb86492de43aa03a79d86fd014, type: 3}
     _characterName: ' '
@@ -959,6 +982,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1763172167}
   - component: {fileID: 1763172166}
+  - component: {fileID: 1763172168}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -1043,6 +1067,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &1763172168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1763172165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &2075082052
 GameObject:
   m_ObjectHideFlags: 0

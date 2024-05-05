@@ -760,29 +760,35 @@ MonoBehaviour:
     _jitterText: 0
     sentences: Sweet! You did it!
     _eventsToInvoke: []
-  - _portraitImage: {fileID: 21300000, guid: aa7650bd263c3a849a6b950ae01689ce, type: 3}
+  - _portraitImage: {fileID: 21300000, guid: 9c4f75ecf9ff7db4c9730b5d252520ca, type: 3}
     _characterName: Cadenza
     _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
     _jitterText: 0
-    sentences: Next lesson will be our last, so be ready!
-    _eventsToInvoke: []
-  - _portraitImage: {fileID: 21300000, guid: 7146e1fb86492de43aa03a79d86fd014, type: 3}
-    _characterName: ' '
-    _characterVoice: {fileID: 11400000, guid: 49f13d9ffda165848bc4eefc70d33489, type: 2}
-    _jitterText: 0
-    sentences: Okay!
-    _eventsToInvoke: []
-  - _portraitImage: {fileID: 21300000, guid: 7146e1fb86492de43aa03a79d86fd014, type: 3}
-    _characterName: ' '
-    _characterVoice: {fileID: 11400000, guid: 49f13d9ffda165848bc4eefc70d33489, type: 2}
-    _jitterText: 0
-    sentences: Cool!
+    sentences: Actually, it didn't even seem like much of a challenge for you...
     _eventsToInvoke: []
   - _portraitImage: {fileID: 21300000, guid: 3a22180e6767704428bfdd533e19392a, type: 3}
     _characterName: ' '
     _characterVoice: {fileID: 11400000, guid: 49f13d9ffda165848bc4eefc70d33489, type: 2}
     _jitterText: 0
-    sentences: Yeah.
+    sentences: Are you sure? That felt pretty challenging to me...
+    _eventsToInvoke: []
+  - _portraitImage: {fileID: 21300000, guid: aa7650bd263c3a849a6b950ae01689ce, type: 3}
+    _characterName: Cadenza
+    _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
+    _jitterText: 0
+    sentences: Now now, no need to act humble...
+    _eventsToInvoke: []
+  - _portraitImage: {fileID: 21300000, guid: aa7650bd263c3a849a6b950ae01689ce, type: 3}
+    _characterName: Cadenza
+    _characterVoice: {fileID: 11400000, guid: f2c446edbd4bdda40afb0605d6bb2519, type: 2}
+    _jitterText: 0
+    sentences: I'll just have to ramp it up a bit for our last lesson!
+    _eventsToInvoke: []
+  - _portraitImage: {fileID: 21300000, guid: 3a22180e6767704428bfdd533e19392a, type: 3}
+    _characterName: ' '
+    _characterVoice: {fileID: 11400000, guid: 49f13d9ffda165848bc4eefc70d33489, type: 2}
+    _jitterText: 0
+    sentences: Well... I am a little scared now.
     _eventsToInvoke: []
   - _portraitImage: {fileID: 21300000, guid: 3a22180e6767704428bfdd533e19392a, type: 3}
     _characterName: ' '
