@@ -38,12 +38,13 @@ public class NoteController : MonoBehaviour
         gameObject.transform.position = new Vector3(noteXPos,
             baseHeight + (note.PitchHeightModifier() * _noteSpacingY), gameObject.transform.position.z);
 
-        if (RhythmController.instance.CurrentDifficulty.OneButtonMode || n.Note.IsRest)
+        if (RhythmController.instance.CurrentDifficulty.OneButtonMode || 
+            PlayerPrefs.GetInt("oneButtonMode", 0) == 1 || n.Note.IsRest)
         {
             //hide letter display if in One Button Mode or a rest
             _letterDisplay.color = new Color(0, 0, 0, 0);
         }
-        else if (RhythmController.instance.CurrentDifficulty.FourButtonMode)
+        else if (PlayerPrefs.GetInt("fourButtonMode", 0) == 1)
         {
             //sets letter display to arrow if in Four Button Mode
             _letterDisplay.sprite = _arrowSprite;

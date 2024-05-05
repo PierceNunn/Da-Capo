@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     public void OnNoteA()
     {
-        if (!RhythmController.instance.CurrentDifficulty.FourButtonMode)
+        if (PlayerPrefs.GetInt("fourButtonMode", 0) != 1)
             IsButtonTimed(IndividualNoteChart.possiblePitches.A);
     }
     /// <summary>
@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     public void OnNoteD()
     {
-        if(!RhythmController.instance.CurrentDifficulty.FourButtonMode)
+        if(PlayerPrefs.GetInt("fourButtonMode", 0) != 1)
             IsButtonTimed(IndividualNoteChart.possiblePitches.D);
         
     }
@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
     public void OnSimpleNotes(InputValue iValue)
     {
         Vector2 inputMovement = iValue.Get<Vector2>();
-        if(RhythmController.instance.CurrentDifficulty.FourButtonMode)
+        if(PlayerPrefs.GetInt("fourButtonMode", 0) == 1)
         {
             if (inputMovement.x == 1)
                 IsButtonTimed(IndividualNoteChart.possiblePitches.A);
@@ -100,7 +100,7 @@ public class PlayerController : MonoBehaviour
     {
         float[] surroundingNoteTimes = RhythmController.instance.GetSurroundingNotesTime();
 
-        if(RhythmController.instance.CurrentDifficulty.FourButtonMode && pitch != 
+        if(PlayerPrefs.GetInt("fourButtonMode", 0) == 1 && pitch != 
             IndividualNoteChart.possiblePitches.G)
         {
 
@@ -158,7 +158,8 @@ public class PlayerController : MonoBehaviour
 
         if (actualTime < timeToCheck + RhythmController.instance.CurrentDifficulty.TimingWindow &&
             actualTime > timeToCheck - RhythmController.instance.CurrentDifficulty.TimingWindow &&
-            (pitch == targetNote.Pitch || RhythmController.instance.CurrentDifficulty.OneButtonMode))
+            (pitch == targetNote.Pitch || RhythmController.instance.CurrentDifficulty.OneButtonMode ||
+            PlayerPrefs.GetInt("oneButtonMode", 0) == 1))
         {
             Vector3 particlePos = new Vector3(timeToCheck - actualTime, transform.position.y, transform.position.z);
             Instantiate(_hitParticle, particlePos, Quaternion.identity);
