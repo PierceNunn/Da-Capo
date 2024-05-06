@@ -18,6 +18,6 @@ MonoBehaviour:
   _fourButtonMode: 0
   _scoreMultiplier: 2
   _maxHealth: 5
-  _healthRegen: 1
+  _healthRegen: 0.5
   _scrollSpeed: 1
   _category: 1

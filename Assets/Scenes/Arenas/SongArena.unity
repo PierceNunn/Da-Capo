@@ -311,6 +311,7 @@ MonoBehaviour:
   _comboDisplay: {fileID: 1351641753}
   _currentPointsHandler: {fileID: 144396621}
   _healthBar: {fileID: 1332299351}
+  _healthBarWidthMultiplier: 1
 --- !u!1 &144396615
 GameObject:
   m_ObjectHideFlags: 0

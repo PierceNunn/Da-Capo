@@ -13,7 +13,7 @@ using UnityEngine.SceneManagement;
 public class PlayerHealthManager : MonoBehaviour
 {
     private float currentHealth = 1;
-    private uint maxHealth;
+    private uint maxHealth = 1;
 
     public float CurrentHealth { get => currentHealth; set => currentHealth = value; }
 
